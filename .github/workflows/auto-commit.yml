@@ -1,0 +1,53 @@
+name: Auto-Commit and Push
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  schedule:
+    # Run every 6 hours to ensure regular commits
+    - cron: '0 */6 * * *'
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 0
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Check for changes
+      id: check_changes
+      run: |
+        if [[ -n "$(git status --porcelain)" ]]; then
+          echo "has_changes=true" >> $GITHUB_OUTPUT
+        else
+          echo "has_changes=false" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Auto-commit and push
+      if: steps.check_changes.outputs.has_changes == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git commit -m "🤖 Auto-commit: Update agile templates and protocols [skip ci]"
+        git push origin ${{ github.ref }}
+
+    - name: No changes message
+      if: steps.check_changes.outputs.has_changes == 'false'
+      run: echo "No changes to commit"

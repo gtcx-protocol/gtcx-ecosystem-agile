@@ -9,7 +9,14 @@
     "agile": "open ecosystem-agile-development.md",
     "list-roadmaps": "ls -la roadmaps/",
     "validate": "echo 'Validating agile roadmap consistency...'",
-    "sprint-planning": "echo 'Launching sprint planning session...'"
+    "sprint-planning": "echo 'Launching sprint planning session...'",
+    "commit": "git add . && git commit -m '📝 Update agile templates and protocols'",
+    "push": "git push origin $(git branch --show-current)",
+    "commit-push": "npm run commit && npm run push",
+    "auto-commit": "bash scripts/commit-hook.sh",
+    "status": "git status",
+    "check-changes": "git diff --name-only",
+    "frequent-commit": "echo '🚀 Committing and pushing every 2 hours...' && watch -n 7200 'npm run commit-push'"
   },
   "keywords": [
     "gtcx",
