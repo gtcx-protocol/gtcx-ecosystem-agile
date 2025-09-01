@@ -1,0 +1,27 @@
+{
+  "name": "gtcx-protocol-ecosystem",
+  "repos": [
+    "gtcx-ecosystem-agents",
+    "gtcx-ecosystem-agile",
+    "gtcx-ecosystem-amis",
+    "gtcx-ecosystem-anisa",
+    "gtcx-ecosystem-api-gateway",
+    "gtcx-ecosystem-cognitive",
+    "gtcx-ecosystem-compliance",
+    "gtcx-ecosystem-design",
+    "gtcx-ecosystem-docs",
+    "gtcx-ecosystem-enterprise",
+    "gtcx-ecosystem-global-south",
+    "gtcx-ecosystem-migration",
+    "gtcx-ecosystem-mobile",
+    "gtcx-ecosystem-platforms",
+    "gtcx-ecosystem-protocols",
+    "gtcx-ecosystem-research",
+    "gtcx-ecosystem-security",
+    "gtcx-ecosystem-service-mesh",
+    "gtcx-ecosystem-services",
+    "gtcx-ecosystem-shared",
+    "gtcx-ecosystem-specs",
+    "gtcx-ecosystem-support"
+  ]
+}
