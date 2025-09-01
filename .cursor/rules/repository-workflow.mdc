@@ -1,0 +1,14 @@
+---
+description: PR-only workflow; small scoped changes; keep user view on main
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+Repository workflow
+- PR-only: never push to main; use feature branches and small, scoped PRs.
+- Show scope first: list files to change and a short diff preview; wait for explicit approval.
+- Size limits: ≤20 files and ≤500 changed lines per PR unless approved by the user.
+- Keep user on main: do not switch the user’s working branch without approval.
+- Read-only by default: only edit paths the user whitelists for the current task.
+- No CI/bots: do not enable CI/CD, bots, or change repo settings without approval.

@@ -1,0 +1,11 @@
+---
+description: Monorepo conventions and safety
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+Monorepo conventions
+- Root hygiene: Only README.md and package.json at the monorepo root unless explicitly approved; all code/docs live in sub‑repos.
+- _archive/ is read‑only historical content. Never write into or reorganize it.
+- Backups: The backup at /Users/amanianai/Sites/backups/gtcx-protocol-ecosystem copy/ is the authoritative source for recovery; use it read‑only.

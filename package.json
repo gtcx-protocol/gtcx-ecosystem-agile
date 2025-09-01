@@ -1,0 +1,62 @@
+{
+  "name": "gtcx-ecosystem-agile",
+  "version": "1.0.0",
+  "description": "GTCX Agile Development Ecosystem - Comprehensive agile framework with templates, protocols, and continuous improvement",
+  "main": "docs/AGILE_ECOSYSTEM_GUIDE.md",
+  "scripts": {
+    "start": "echo '🚀 GTCX Agile Ecosystem - Launching comprehensive agile framework'",
+    "guide": "open docs/AGILE_ECOSYSTEM_GUIDE.md",
+    "quick-ref": "open docs/QUICK_REFERENCE.md",
+    "templates": "open agile-templates/",
+    "protocols": "open agile-protocols/",
+    "ci-backlog": "open ci-backlog/",
+    "roadmap": "open docs/ecosystem-roadmap.md",
+    "agile": "open docs/ecosystem-agile-development.md",
+    "docs": "open docs/",
+    "commit": "git add . && git commit -m '📝 Update agile ecosystem'",
+    "push": "git push origin $(git branch --show-current)",
+    "commit-push": "npm run commit && npm run push",
+    "status": "git status",
+    "check-changes": "git diff --name-only"
+  },
+  "keywords": [
+    "gtcx",
+    "agile",
+    "scrum",
+    "kanban",
+    "templates",
+    "protocols",
+    "continuous-improvement",
+    "ecosystem",
+    "development-framework"
+  ],
+  "author": "GTCX Protocol Ecosystem",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gtcx-protocol/gtcx-ecosystem-agile.git"
+  },
+
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "docs/",
+    "agile-templates/",
+    "agile-protocols/",
+    "ci-backlog/",
+    "README.md"
+  ],
+  "agile": {
+    "framework": "Scrum with Kanban",
+    "sprint_duration": "2 weeks",
+    "release_cadence": "Every 4 sprints (8 weeks)",
+    "story_point_scale": [1, 3, 5, 8, 13, 21],
+    "quality_gates": {
+      "test_coverage": ">85%",
+      "security_vulnerabilities": "0 critical/high",
+      "code_review": "100%",
+      "documentation": "All public APIs documented"
+    }
+  }
+}

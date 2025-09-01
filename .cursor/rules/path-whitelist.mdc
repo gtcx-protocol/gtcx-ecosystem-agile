@@ -1,0 +1,12 @@
+---
+description: Default path whitelist for common tasks
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+Path whitelist
+- Documentation tasks: default allowed path is only `**/agile-pm/**` unless the user expands scope.
+- Protocols code: only inside the named project folder (e.g., `gtcx-ecosystem-protocols/geotag/**`) after approval.
+- Platforms code: only inside the named platform folder (e.g., `gtcx-ecosystem-platforms/crx/**`) after approval.
+- Any other path requires explicit approval in this thread before editing.

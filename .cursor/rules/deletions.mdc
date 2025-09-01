@@ -1,0 +1,16 @@
+---
+description: Strict deletions policy (approval required; prefer archive; fail closed)
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+Deletions policy
+- Default: no deletions, moves, or renames.
+- Any deletion requires explicit chat approval: “APPROVED: delete <exact paths>”.
+- Paths must be itemized (no globs).
+- If >10 paths: repeat the exact list and require “CONFIRM: delete <same list>”.
+- Prefer non‑destructive `archive/` moves over hard delete; hard delete only with explicit approval.
+- Only consider deletions in user‑whitelisted paths for the current task.
+- Never delete or rewrite git history.
+- If missing approval or scope isn’t explicit, do nothing (fail closed).
