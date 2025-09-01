@@ -1,269 +1,230 @@
-# 🚀 **Project Adaptation Guide - How to Use This Agile Template**
+# 🚀 **Project Adaptation Guide**
 
-## **Purpose & Intent**
-This guide provides step-by-step instructions for adapting the GTCX agile template to any new or existing project. It ensures consistent, professional agile practices across all GTCX projects while maintaining flexibility for project-specific needs.
-
----
-
-## **🎯 When to Use This Template**
-
-### **✅ Perfect For:**
-- **New GTCX projects** - Start with professional agile practices
-- **Existing projects** - Standardize and improve current processes
-- **Project migrations** - Move to consistent agile framework
-- **Team onboarding** - Establish clear processes for new teams
-
-### **🔧 Project Types:**
-- **Foundation Systems** - TradePass, Geotag, GCI, PVP, VaultMark
-- **Platforms** - AGX, CRX, SGX platforms
-- **Applications** - Mobile apps, web apps, APIs
-- **Services** - Backend services, integration services
-- **Enterprise Tools** - Business intelligence, reporting tools
+## **Purpose**
+This guide helps you adapt the GTCX Universal Agile Template to any project - new or existing. Follow these steps to ensure consistency, quality, and professional agile practices across all GTCX projects.
 
 ---
 
-## **📋 Step-by-Step Adaptation Process**
+## **📋 Quick Start Process**
 
-### **Step 1: Project Setup & Copy**
-
-#### **1.1 Copy the Agile Folder**
+### **Step 1: Copy the Template Structure**
 ```bash
-# Navigate to your project directory
-cd /path/to/your-project
+# For new projects
+cp -r /path/to/gtcx-ecosystem-agile/agile/ your-new-project/
 
-# Copy the entire agile folder
-cp -r /path/to/gtcx-ecosystem-agile/agile/ ./
-
-# Verify the copy
-ls -la agile/
+# For existing projects  
+cp -r /path/to/gtcx-ecosystem-agile/agile/ your-existing-project/
 ```
 
-#### **1.2 Verify Structure**
-Ensure you have all required folders:
-```
-agile/
-├── README.md
-├── guides/
-├── planning/
-├── processes/
-├── priorities/
-├── quality/
-├── samples_docs/
-└── spec/
-```
+### **Step 2: Customize Core Documents**
+1. **Update `README.md`** with your project name and specifics
+2. **Fill out `project-specification-template.md`** with your project details
+3. **Customize templates** in the `templates/` folder for your needs
 
-### **Step 2: Project Customization**
+### **Step 3: Set Up Project Documentation**
+1. **Choose relevant templates** from `templates/` folder
+2. **Copy process templates** from `../templates/` as needed
+3. **Create project-specific documents** using the templates
 
-#### **2.1 Update Main README**
-1. **Open** `agile/README.md`
-2. **Replace** all `[PROJECT_NAME]` placeholders
-3. **Update** project description and objectives
-4. **Customize** technology stack and business context
+---
 
-#### **2.2 Project-Specific Customization**
-```bash
-# Example: Customize for TradePass project
-cd agile/
-sed -i '' 's/\[PROJECT_NAME\]/TradePass/g' README.md
-sed -i '' 's/\[VERSION\]/1.0.0/g' README.md
-sed -i '' 's/\[DATE\]/2025-09-01/g' README.md
-```
+## **🎯 Template Customization Levels**
 
-### **Step 3: Core Documentation Setup**
+### **Level 1: Basic Customization (Required)**
+- [ ] Replace all `[PROJECT_NAME]` placeholders
+- [ ] Update document headers with project info
+- [ ] Fill out project specification template
+- [ ] Customize README.md
 
-#### **3.1 Project Specification**
-1. **Copy** the project specification template
-2. **Customize** for your specific project
-3. **Fill in** all required sections
-4. **Review** with stakeholders
+### **Level 2: Standard Customization (Recommended)**
+- [ ] Select relevant templates for your project type
+- [ ] Customize user story templates
+- [ ] Set up compliance framework
+- [ ] Configure quality assurance processes
 
-```bash
-# Copy and customize project spec
-cp spec/project-specification-template.md spec/[PROJECT_NAME]-specification.md
-```
+### **Level 3: Advanced Customization (Optional)**
+- [ ] Create project-specific templates
+- [ ] Add custom sections to existing templates
+- [ ] Integrate with project-specific tools
+- [ ] Customize workflow processes
 
-#### **3.2 Planning Framework**
-1. **Adapt** PRD templates for your project
-2. **Create** project-specific epics and features
-3. **Define** user stories and acceptance criteria
-4. **Set** realistic timelines and milestones
+---
 
-#### **3.3 Quality Standards**
-1. **Customize** QA and UAT plans
-2. **Define** project-specific quality gates
-3. **Establish** testing requirements
-4. **Set** performance and security standards
+## **📁 Template Selection Guide**
 
-### **Step 4: Process Implementation**
+### **For Protocol Projects (TradePass, Geotag, GCI)**
+**Essential Templates:**
+- `technical-architecture-template.md`
+- `system-architecture-spec-template.md`
+- `api-specification-template.md`
+- `compliance-framework-template.md`
+- `deployment-requirements-template.md`
 
-#### **4.1 Team Processes**
-1. **Adapt** Definition of Done for your project
-2. **Customize** sprint ceremonies and timing
-3. **Establish** team communication protocols
-4. **Set** escalation procedures
+**Process Templates (from ../templates/):**
+- `prd-template.md`
+- `qa-test-plan-template.md`
+- `uat-test-plan-template.md`
 
-#### **4.2 Priority Framework**
-1. **Customize** P0-P3 definitions for your project
-2. **Define** response time requirements
-3. **Establish** escalation paths
-4. **Set** business impact criteria
+### **For Platform Projects (PVP, VaultMark)**
+**Essential Templates:**
+- `technical-architecture-template.md`
+- `deployment-requirements-template.md`
+- `api-specification-template.md`
+- `frontend-strategy-template.md`
+
+**Process Templates (from ../templates/):**
+- `prd-template.md`
+- `sprint-planning-template.md`
+- `retrospective-workflow.md`
+
+### **For Mobile Projects**
+**Essential Templates:**
+- `design-system-template.md`
+- `user-journey-maps-template.md`
+- `screen-inventory-template.md`
+- `frontend-prd-template.md`
+- `frontend-roadmap-template.md`
+
+**Process Templates (from ../templates/):**
+- `user-story-template.md`
+- `qa-test-plan-template.md`
+- `uat-test-plan-template.md`
+
+### **For Community/Marketing Projects**
+**Essential Templates:**
+- `community-hub-page-template.md`
+- `developer-quickstart-template.md`
+- `roi-calculator-page-template.md`
+- `feedback-improvement-template.md`
 
 ---
 
 ## **🔧 Customization Examples**
 
-### **Example 1: TradePass Project**
-```yaml
-project_name: "TradePass"
-project_type: "Identity Verification System"
-technology_stack:
-  frontend: "React Native"
-  backend: "Node.js/Express"
-  database: "PostgreSQL"
-  security: "Biometric, Encryption"
-business_context: "Global South trading identity verification"
-success_metrics:
-  - "99.9% uptime"
-  - "<2s response time"
-  - "100% compliance with local regulations"
+### **TradePass Example**
+```markdown
+# Project Specification - TradePass Identity Verification System
+
+## Document Information
+- **Project**: TradePass v1.0
+- **Version**: 1.0
+- **Date**: 2024-01-15
+- **Project Manager**: [PM Name]
+- **Stakeholders**: Government Partners, Identity Verification Teams
+- **Classification**: CONFIDENTIAL
+
+## Executive Summary
+TradePass is a government-grade identity verification and trading credentials platform that enables secure, compliant identity verification for global trade participants...
 ```
 
-### **Example 2: Geotag Project**
-```yaml
-project_name: "Geotag"
-project_type: "Location Compliance System"
-technology_stack:
-  frontend: "React/Next.js"
-  backend: "Python/FastAPI"
-  database: "MongoDB"
-  geospatial: "PostGIS, Mapbox"
-business_context: "Location-based trading compliance"
-success_metrics:
-  - "Real-time location validation"
-  - "100% regulatory compliance"
-  - "Sub-second response times"
+### **Geotag Example**
+```markdown
+# Project Specification - Geotag Location Trust System
+
+## Document Information
+- **Project**: Geotag v1.0
+- **Version**: 1.0
+- **Date**: 2024-01-15
+- **Project Manager**: [PM Name]
+- **Stakeholders**: Location Services Teams, Compliance Teams
+- **Classification**: INTERNAL
+
+## Executive Summary
+Geotag provides location-based trust and compliance verification, enabling secure geographic verification for trade and compliance applications...
 ```
 
-### **Example 3: GCI Platform**
-```yaml
-project_name: "GCI"
-project_type: "Global Compliance Index"
-technology_stack:
-  frontend: "Vue.js/Nuxt"
-  backend: "Java/Spring Boot"
-  database: "Oracle"
-  analytics: "Apache Spark, Elasticsearch"
-business_context: "Global trading compliance scoring"
-success_metrics:
-  - "Real-time compliance scoring"
-  - "99.99% data accuracy"
-  - "Global regulatory coverage"
+### **GCI Example**
+```markdown
+# Project Specification - Global Compliance Index
+
+## Document Information
+- **Project**: GCI v1.0
+- **Version**: 1.0
+- **Date**: 2024-01-15
+- **Project Manager**: [PM Name]
+- **Stakeholders**: Compliance Teams, Regulatory Bodies
+- **Classification**: CONFIDENTIAL
+
+## Executive Summary
+GCI builds on TradePass and Geotag to provide comprehensive compliance indexing and monitoring for global trade participants...
 ```
 
 ---
 
-## **📚 Template Customization Guidelines**
+## **📝 Document Workflow**
 
-### **Required Customizations**
-- [ ] **Project Name** - Replace all placeholders
-- [ ] **Business Context** - Define project purpose and value
-- [ ] **Technology Stack** - Specify your technologies
-- [ ] **Success Metrics** - Define measurable outcomes
-- [ ] **Team Structure** - Define roles and responsibilities
-- [ ] **Timeline** - Set realistic milestones
+### **Phase 1: Foundation (Week 1)**
+1. **Copy template structure** to your project
+2. **Fill out project specification** template
+3. **Select relevant templates** for your project type
+4. **Set up basic documentation** structure
 
-### **Optional Customizations**
-- [ ] **Industry-Specific Requirements** - Add compliance needs
-- [ ] **Integration Points** - Define system connections
-- [ ] **Security Requirements** - Specify security standards
-- [ ] **Performance Requirements** - Define performance targets
-- [ ] **Compliance Framework** - Add regulatory requirements
+### **Phase 2: Planning (Week 2)**
+1. **Create user stories** using templates
+2. **Set up compliance framework** if needed
+3. **Define technical architecture** using templates
+4. **Establish quality processes** using process templates
 
-### **Maintain Consistency**
-- [ ] **Keep folder structure** - Don't change the organization
-- [ ] **Use same naming** - Follow established conventions
-- [ ] **Maintain quality** - Keep high documentation standards
-- [ ] **Follow processes** - Use established agile practices
+### **Phase 3: Implementation (Ongoing)**
+1. **Use process templates** for sprints, standups, retros
+2. **Update documentation** as project evolves
+3. **Maintain quality standards** using QA templates
+4. **Track progress** using established metrics
 
 ---
 
-## **🚀 Quick Adaptation Checklist**
+## **🎯 Success Checklist**
 
-### **Immediate Actions (Day 1)**
-- [ ] Copy agile folder to project
-- [ ] Update project name in README
-- [ ] Customize project description
-- [ ] Set initial timeline
+### **Documentation Setup Complete When:**
+- [ ] All placeholder text replaced with project-specific content
+- [ ] Project specification template fully completed
+- [ ] Relevant templates selected and customized
+- [ ] Process templates configured for team workflow
+- [ ] Quality assurance processes established
+- [ ] Compliance requirements documented
+- [ ] Team trained on template usage
+- [ ] Documentation review process established
 
-### **Week 1 Actions**
-- [ ] Complete project specification
-- [ ] Define success metrics
-- [ ] Set up planning framework
-- [ ] Establish quality standards
-
-### **Week 2 Actions**
-- [ ] Implement team processes
-- [ ] Set up priority framework
-- [ ] Create user stories
-- [ ] Begin sprint planning
-
-### **Ongoing Actions**
-- [ ] Regular documentation updates
-- [ ] Process improvements
-- [ ] Team feedback incorporation
-- [ ] Quality metric tracking
+### **Ongoing Maintenance:**
+- [ ] Templates updated as project evolves
+- [ ] New templates added as needed
+- [ ] Process improvements documented
+- [ ] Team feedback incorporated
+- [ ] Documentation kept current with project status
 
 ---
 
-## **⚠️ Common Pitfalls & Solutions**
+## **🆘 Common Issues & Solutions**
 
-### **Pitfall 1: Over-Customization**
-- **Problem**: Changing too much of the template structure
-- **Solution**: Keep the established structure, customize content only
+### **Issue: Too Many Templates**
+**Solution**: Start with essential templates only, add others as needed
 
-### **Pitfall 2: Incomplete Customization**
-- **Problem**: Leaving placeholder text in final documents
-- **Solution**: Use the customization checklist systematically
+### **Issue: Team Resistance to Documentation**
+**Solution**: Show value through improved communication and reduced rework
 
-### **Pitfall 3: Ignoring Templates**
-- **Problem**: Not using the comprehensive templates in `../templates/`
-- **Solution**: Reference parent templates for all process documents
+### **Issue: Templates Don't Fit Project**
+**Solution**: Customize templates heavily or create project-specific versions
 
-### **Pitfall 4: Inconsistent Implementation**
-- **Problem**: Different teams using different processes
-- **Solution**: Standardize on the template processes across all teams
+### **Issue: Documentation Gets Outdated**
+**Solution**: Build documentation updates into sprint processes
 
 ---
 
 ## **📞 Support & Resources**
 
-### **Template Issues**
-- **Check samples_docs/** - Review example implementations
-- **Reference parent templates** - Use `../templates/` for process docs
-- **Contact agile team** - Get help with complex customizations
+### **Template Support**
+- **Template Issues**: Check TEMPLATE_CATALOG.md for guidance
+- **Customization Help**: Review template "How to Use" sections
+- **Process Questions**: Refer to ../templates/ process documentation
 
-### **Best Practices**
-- **Start simple** - Don't over-engineer initially
-- **Iterate** - Improve processes based on team feedback
-- **Maintain consistency** - Keep same structure across projects
-- **Document changes** - Track what you customize and why
-
----
-
-## **🌟 Success Metrics**
-
-### **Template Adoption Success**
-- [ ] **100% of GTCX projects** use the agile template
-- [ ] **Consistent structure** across all project documentation
-- [ ] **Professional quality** maintained in all projects
-- [ ] **Team satisfaction** with agile processes
-
-### **Project Success Indicators**
-- [ ] **Clear project scope** and requirements
-- [ ] **Measurable success criteria** defined
-- [ ] **Quality gates** established and enforced
-- [ ] **Regular process improvement** through retrospectives
+### **Project-Specific Support**
+- **TradePass**: Contact TradePass team leads
+- **Geotag**: Contact Geotag team leads  
+- **GCI**: Contact GCI team leads
+- **Platform Projects**: Contact Platform team leads
 
 ---
 
-*This guide ensures every GTCX project successfully adopts the agile template while maintaining consistency and quality across the ecosystem. Follow the steps systematically and customize thoughtfully.*
+**Last Updated**: [DATE]  
+**Version**: 1.0  
+**Maintained By**: GTCX Documentation Team
