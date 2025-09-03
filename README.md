@@ -613,16 +613,7 @@ flowchart LR
 
 <!-- Consolidated roadmap details to the protocols repository and internal planning docs for brevity. -->
 
-## Community
-- Issues and discussions in each repo (use repo issue trackers)
-- Contributions welcome: docs, specs, code, diagrams
-- Security: report privately to maintainers before public disclosure
-
-MIT License
-
----
-
-Contributions & governance: open issues/PRs against component repos; follow per‑component CHANGELOGs for releases ([cognitive changelog](gtcx-ecosystem-cognitive/changelog.md), [anisa changelog](gtcx-ecosystem-anisa/changelog.md), [panx changelog](gtcx-ecosystem-cognitive/panx/changelog.md), [cortex changelog](gtcx-ecosystem-cognitive/cortex/changelog.md)).
+<!-- Community and governance section intentionally removed for brevity in this public overview. -->
 
 ## Telegram onboarding (fast path)
 
