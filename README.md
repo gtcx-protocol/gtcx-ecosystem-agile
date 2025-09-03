@@ -8,7 +8,7 @@ Public home for the GTCX verification protocols and sovereign platforms.
 
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg) ![Updated](https://img.shields.io/badge/Updated-2025--09--03-success) ![Protocols](https://img.shields.io/badge/Protocols-5-blue) ![Sovereignty](https://img.shields.io/badge/Design-Sovereignty--Preserving-brightgreen)
 
-Last updated: 2025‑09‑03 06:50Z
+Last updated: 2025‑09‑03 07:20Z
 
 ## Table of contents
 - Executive summary
@@ -28,6 +28,13 @@ Last updated: 2025‑09‑03 06:50Z
 
 ## Executive summary
 GTCX standardizes how facts are verified, approved, and preserved in global trade. Five core protocols (TradePass, GCI, GeoTag, VaultMark, PvP) produce sovereign proofs that platforms (CRX, SGX, AGX) use to automate permits, markets, and cross‑border settlement.
+
+### System at a glance (from technical advisors primer)
+- TradePass: identity verification 3 weeks → ~30 seconds; capacity ~1M entities/day
+- GeoTag: origin proof from “impossible” → instant (cryptographic GPS signatures + device attestation)
+- GCI: compliance evaluation 3 weeks → ~2 minutes (policy engine + attestations)
+- VaultMark: continuous digital chain of custody; instant ownership verification; sealed audit
+- PvP: atomic payment‑versus‑physical; settlement < 1s; scales to 10M+ daily transactions
 
 ## Who this is for
 - Governments and regulators seeking sovereignty‑preserving digital infrastructure
@@ -234,6 +241,11 @@ Each service includes: README, user/agent guides, runbooks, deploy guides, JSON 
 - APIs & gateways — shared adapters and routing (`gtcx-ecosystem-api-gateway/`)
 - Research & specs — canonical protocol drafts and design notes (`gtcx-ecosystem-research/`)
 
+### Access layer: CaaS, VIA, VXA
+- CaaS: simple APIs that wrap protocol workflows for apps and services
+- VIA (teach & guide) and VXA (inspect & verify) mobile apps leverage the protocols end‑to‑end
+- See: `gtcx-ecosystem-platforms/README.md` (platforms overview and app shells)
+
 ### End‑to‑end trade process (custody before SGX)
 ```mermaid
 flowchart TD
@@ -284,6 +296,31 @@ sequenceDiagram
   GCI-->>PVP: Policy OK
   PVP->>PVP: Atomic settlement
 ```
+
+### “Trade in ~6 hours” (from primer)
+- Identity verified (TradePass): ~30 seconds
+- Site/production evidence (GeoTag): instant
+- Compliance eligibility (GCI): ~2 minutes
+- Permit issuance (CRX): target same‑day, typical ≤ 6 hours
+- Listing & broadcast (SGX→AGX): instant after permit
+- Atomic settlement (PvP): < 1 second when trade executes
+
+### Performance snapshots
+VaultMark (chain of custody)
+
+| Before | After (VaultMark) |
+| --- | --- |
+| Paper trail breaks, mixing common | Unbroken digital chain, sealed records |
+| 3–5 days to verify ownership | Instant verification |
+| Frequent custody disputes | Cryptographic proof across transfers |
+
+PvP (settlement)
+
+| Before | After (PvP) |
+| --- | --- |
+| 3–5 business days wire transfer | Atomic settlement < 1s |
+| Intermediaries required | Direct counterparty exchange |
+| 15% failed trades, exposure risk | Both‑or‑neither finality |
 
 ## Contracts and versioning
 - Schemas: JSON Schema with stable `$id` and semantic versioning
