@@ -24,6 +24,11 @@ Last updated: 2025‑09‑03 08:00Z
 ### Executive summary ✨
 GTCX is sovereign verification infrastructure for global trade. Five core protocols — TradePass, GeoTag, GCI, VaultMark, and PvP — turn identity claims, geolocation evidence, policy evaluations, custody events, and settlement instructions into independently verifiable proofs that CRX, SGX, and AGX use to automate permits, listings, and settlement. The result is moving from weeks of paperwork and opaque intermediaries to same‑day approvals and sub‑second settlement.
 
+### TL;DR
+- What it is: verification infrastructure that makes legitimacy provable and portable across agencies, borders, and markets.
+- Who it serves: regulators (consistent permits and oversight), producers/exporters (market access with proof), buyers/finance (counterparty assurance and atomic settlement).
+- How it works: protocols generate proofs; PANX verifies; Cortex analyzes; CRX/SGX/AGX use proof to automate permits, listings, and settlement.
+
 ### Core components at a glance
 - TradePass — Identity & authorization: verifies people/orgs; issues time‑boxed roles/entitlements.
 - GeoTag — Provenance evidence: cryptographic location/timestamping and device attestation.
@@ -33,6 +38,17 @@ GTCX is sovereign verification infrastructure for global trade. Five core protoc
 - PANX — Verification service: composes protocol artifacts into thresholded proofs for CRX/SGX/PvP.
 - Cortex — Analytics & anomalies: ingests proofs/events, summarizes signals, flags anomalies.
 - ANISA — Cultural intelligence: guidance that improves capture and interactions in the field.
+
+### Story of transformation
+From permission to proof, and from paperwork to evidence—this is the shift GTCX enables.
+
+| Before | After with GTCX |
+| :-- | :-- |
+| Identity checks take weeks and don’t travel | TradePass verifies in ~30s; roles are portable and auditable |
+| Provenance is asserted by documents | GeoTag produces signed location/time evidence; VaultMark binds custody |
+| Policy is interpreted differently per desk | GCI evaluates eligibility the same way, every time |
+| Custody breaks; disputes are common | VaultMark maintains sealed, verifiable chain‑of‑custody |
+| Payment and delivery settle on separate rails | PvP settles both‑or‑neither atomically, with proof references |
 
 ### By the numbers
 | Signal | Value |
