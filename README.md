@@ -22,7 +22,7 @@ Last updated: 2025‑09‑03 08:00Z
 ## 1. Overview
 
 ### Executive summary ✨
-GTCX is sovereign verification infrastructure for global trade. Five core protocols — TradePass, GeoTag, GCI, VaultMark, and PvP — turn real‑world statements and documents into independently verifiable proofs that CRX, SGX, and AGX use to automate permits, listings, and settlement. The result is moving from weeks of paperwork and opaque intermediaries to same‑day approvals and sub‑second settlement.
+GTCX is sovereign verification infrastructure for global trade. Five core protocols — TradePass, GeoTag, GCI, VaultMark, and PvP — turn identity claims, geolocation evidence, policy evaluations, custody events, and settlement instructions into independently verifiable proofs that CRX, SGX, and AGX use to automate permits, listings, and settlement. The result is moving from weeks of paperwork and opaque intermediaries to same‑day approvals and sub‑second settlement.
 
 ### Core components at a glance
 - TradePass — Identity & authorization: verifies people/orgs; issues time‑boxed roles/entitlements.
