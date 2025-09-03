@@ -17,7 +17,7 @@ Last updated: 2025‑09‑03 08:00Z
 4. Using the system
 5. Reference
 
-> Start here: platforms overview → [platforms readme](gtcx-ecosystem-platforms/readme.md) • e2e demo (PANX↔Cortex) → [cognitive readme](gtcx-ecosystem-cognitive/readme.md)
+
 
 ## 1. Overview
 
