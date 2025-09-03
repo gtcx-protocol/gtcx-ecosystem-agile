@@ -65,20 +65,15 @@ From permission to proof, and from paperwork to evidence—this is the shift GTC
 | Permit issuance (CRX) | typical ≤ 6 hours |
 | Settlement (PvP) | atomic < 1 second; 10M+ daily tx scale |
 
-Outcomes (targets):
-- Identity: 3 weeks → ~30 seconds (TradePass)
-- Origin proof: “impossible” → instant (GeoTag)
-- Compliance eligibility: 3 weeks → ~2 minutes (GCI)
-- Permit issuance: typical ≤ 6 hours (CRX)
-- Custody: continuous, sealed audit across transfers (VaultMark)
-- Settlement: atomic PvP < 1 second; scales to 10M+ daily transactions
-
-### System at a glance
-- TradePass: identity verification 3 weeks → ~30 seconds; capacity ~1M entities/day
-- GeoTag: origin proof from “impossible” → instant (cryptographic GPS signatures + device attestation)
-- GCI: compliance evaluation 3 weeks → ~2 minutes (policy engine + attestations)
-- VaultMark: continuous digital chain of custody; instant ownership verification; sealed audit
-- PvP: atomic payment‑versus‑physical; settlement < 1s; scales to 10M+ daily transactions
+### Outcomes at a glance
+| Component | Outcome | Capability |
+| :-- | :-- | :-- |
+| TradePass | Identity verification ~30 seconds (vs 3 weeks) | Portable roles/entitlements |
+| GeoTag | Origin proof instant | Cryptographic location + device attestation |
+| GCI | Eligibility ~2 minutes | Policy engine + attestations |
+| CRX | Permit issuance same‑day (≤ 6 hours typical) | Workflow + audit trail |
+| VaultMark | Continuous sealed custody | Instant ownership verification |
+| PvP | Atomic settlement < 1 second; scales to 10M+ daily tx | Both‑or‑neither payment‑versus‑physical |
 
 
 
