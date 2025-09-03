@@ -68,19 +68,19 @@ flowchart TD
 ### Verification layers → platforms (visual)
 ```mermaid
 flowchart LR
-  subgraph "Verification Protocols"
+  subgraph VP[Verification Protocols]
     TP[TradePass]
     GCI[GCI]
     GT[GeoTag]
     VM[VaultMark]
     PVP[PvP]
   end
-  subgraph "Reference Services"
+  subgraph RS[Reference Services]
     PANX[PANX (Verification)]
     ANISA[ANISA (Cultural)]
     CORTEX[Cortex (Analytics)]
   end
-  subgraph "Platforms"
+  subgraph PL[Platforms]
     CRX[CRX Regulatory]
     SGX[SGX Exchange]
     AGX[AGX Global]
@@ -90,7 +90,7 @@ flowchart LR
   GT --> PANX
   VM --> PANX
   PVP --> PANX
-  ANISA -. enrich .-> PANX
+  ANISA -.-> PANX
   PANX --> CORTEX
   PANX --> CRX
   PANX --> SGX
@@ -182,6 +182,26 @@ flowchart TD
   F[AGX International Marketplace]
   G[Cross‑Border PvP Settlement]
   A --> B --> C --> D --> E --> F --> G
+```
+
+### End‑to‑end sequence (corrected order)
+```mermaid
+sequenceDiagram
+  participant TP as TradePass
+  participant GT as GeoTag
+  participant VM as VaultMark
+  participant PANX as PANX (verify)
+  participant GCI as GCI (policy)
+  participant PVP as PvP (settle)
+
+  TP->>GT: Authorize capture & bind identity (roles/scopes)
+  GT->>VM: Seal signed location/time evidence
+  PANX->>PANX: Verify evidence (role‑weighted thresholds)
+  PANX->>GCI: Evaluate policy gates (jurisdiction/corridor)
+  GCI-->>PANX: Policy OK
+  PANX-->>PVP: Proof achieved (with hints)
+  PVP->>PVP: Atomic settlement if proof+policy pass
+  PVP-->>VM: Seal settlement receipts
 ```
 
 ## Contracts and versioning
