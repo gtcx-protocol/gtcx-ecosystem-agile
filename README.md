@@ -32,11 +32,14 @@ GTCX is sovereign verification infrastructure for global trade. Five core protoc
 
 
 ### Core components at a glance
+#### Core verification protocols
 - TradePass — Identity & authorization: verifies people/orgs; issues time‑boxed roles/entitlements.
 - GeoTag — Provenance evidence: cryptographic location/timestamping and device attestation.
 - GCI — Compliance & policy: machine‑evaluated eligibility and attestations.
 - VaultMark — Custody & audit: sealed, tamper‑evident chain‑of‑custody and ownership checks.
 - PvP — Settlement: atomic both‑or‑neither payment‑versus‑physical exchange.
+
+#### Intelligence systems
 - PANX — Verification service: composes protocol artifacts into thresholded proofs for CRX/SGX/PvP.
 - Cortex — Analytics & anomalies: ingests proofs/events, summarizes signals, flags anomalies.
 - ANISA — Cultural intelligence: guidance that improves capture and interactions in the field.
