@@ -133,10 +133,15 @@ sequenceDiagram
 ```
 
 ## Problems we solve
-- Fragmented identity and inconsistent policy enforcement across jurisdictions
-- Location/provenance fraud and unverifiable documentation
-- Trust bottlenecks that slow approvals, trading, and settlement
-- Audit gaps and verification “washing” through custody chains
+Trade today fails in predictable ways. The GTCX stack addresses each failure with a concrete, verifiable mechanism.
+
+- **Identity without portability**: Registries, paper IDs, and manual KYC do not travel across agencies or borders. Every jurisdiction restarts the process, creating weeks‑long queues and inconsistent permissions. TradePass issues cryptographically verifiable identities and time‑boxed roles so authorization is portable, least‑privilege, and auditable.
+
+- **Provenance without proof**: Documents move faster than goods. By the time a lot reaches the port, origin can be disputed, lots can be mixed, and there is no independent way to verify claims. GeoTag anchors events to cryptographic location and time, while VaultMark binds those events to sealed digital custody so provenance can be checked instantly, without calling the source.
+
+- **Policy without consistency**: Rules are clear on paper but applied differently in practice. Interpretations diverge across desks and regions, creating bottlenecks, leakage, and unpredictable outcomes. GCI evaluates eligibility the same way every time against explicit policies, and CRX turns those decisions into transparent workflows with measurable SLAs.
+
+- **Settlement without finality**: Payment and delivery occur on separate rails, leaving counterparties exposed and disputes to escalate. PvP settles “both‑or‑neither” atomically, using VaultMark custody references and PANX proof links so execution is instant, correct, and independently auditable.
 
 ### Market reality (from primer)
 | Metric | Current State | Impact |
