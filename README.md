@@ -395,24 +395,6 @@ flowchart LR
 ```
 Intelligence systems enrich, verify, and analyze protocol artifacts. ANISA adds cultural context; PANX turns evidence + policy into network proofs; Cortex aggregates and visualizes signals for operators.
 
-##### Product narratives (who it’s for, what it solves, how it feels)
-- **ANISA — Cultural Intelligence (field‑first)**
-  A cooperative lead opens the VIA app to register a new site. Before capture, ANISA supplies concise prompts: key terms to use, questions to confirm, and the exact proof to collect (e.g., co‑op board stamp, entrance wide shot). During capture it flags risks (e.g., vendor IDs don’t match roster) and proposes clear phrasing. Guidance is saved with the artifacts so when TradePass and GeoTag submit to CRX, the evidence is complete on first pass—less rework, fewer rejections.
-  In short: ANISA improves the human layer so the technical layer (TradePass, GeoTag, VaultMark) lands cleanly.
-
-- **PANX — Verification (not a protocol)**
-  - Who: CRX permit approvers, SGX listing desks, banks settling PvP.
-  - Problem: evidence exists but trust is subjective and slow; stakeholders need a neutral, repeatable verdict.
-  - Story: given a lot and its artifacts (TradePass roles, GeoTag evidence, VaultMark custody, GCI eligibility), PANX returns a proof: `{ achieved, percentage, hints[], dissent[] }`. CRX reads the proof to gate permits; SGX uses it to list; PvP references it to settle.
-  - Maps to: “Permit issuance”, “Milestone‑based payment”, “Depart/arrive verification”, “Pilot — Verify”.
-  - Note: PANX is a service that consumes protocol artifacts to produce network proofs.
-
-- **Cortex — Analytics & Anomalies (operations room)**
-  - Who: regulators’ ops centers, exchange supervisors, logistics leads.
-  - Problem: signals are scattered; trends and outliers are invisible until too late.
-  - Story: Cortex ingests PANX proofs and custody/market telemetry, produces summaries, and flags anomalies (e.g., unusual dwell time). It can trigger PANX re‑verify and feeds operator dashboards.
-  - Maps to: “Depart/arrive verification” (real‑time alerts), “Dispute packet” (complete trail), “Pilot — Report”.
-
 ##### What actually happens (inputs → processing → outputs)
 - ANISA (enrichment)
   - Inputs: site/production notes, local terms, stakeholder roles (TradePass), region hints (GeoTag)
