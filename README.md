@@ -27,7 +27,15 @@ Last updated: 2025‑09‑03 07:20Z
 > Start here: protocols index → `research/02-protocol-specifications/l1-core-protocols/` • platforms overview → `gtcx-ecosystem-platforms/README.md` • e2e demo (PANX↔Cortex) → `gtcx-ecosystem-cognitive/README.md`
 
 ## Executive summary
-GTCX standardizes how facts are verified, approved, and preserved in global trade. Five core protocols (TradePass, GCI, GeoTag, VaultMark, PvP) produce sovereign proofs that platforms (CRX, SGX, AGX) use to automate permits, markets, and cross‑border settlement.
+GTCX is sovereign verification infrastructure for global trade. Five core protocols — TradePass, GeoTag, GCI, VaultMark, and PvP — convert claims into machine‑verifiable proofs that CRX, SGX, and AGX use to automate permits, listings, and settlement. The result is moving from weeks of paperwork and opaque intermediaries to same‑day approvals and sub‑second settlement.
+
+Outcomes (targets from the technical advisors primer):
+- Identity: 3 weeks → ~30 seconds (TradePass)
+- Origin proof: “impossible” → instant (GeoTag)
+- Compliance eligibility: 3 weeks → ~2 minutes (GCI)
+- Permit issuance: typical ≤ 6 hours (CRX)
+- Custody: continuous, sealed audit across transfers (VaultMark)
+- Settlement: atomic PvP < 1 second; scales to 10M+ daily transactions
 
 ### System at a glance (from technical advisors primer)
 - TradePass: identity verification 3 weeks → ~30 seconds; capacity ~1M entities/day
