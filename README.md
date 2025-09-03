@@ -85,6 +85,17 @@ Buyers, regulators, and exchanges ask the same questions. Each answer must be ve
 ## Day in the life (epic, but real) 📽️
 
 ### Producer (cooperative lead)
+<sub>
+<ol>
+<li>Register cooperative in TradePass (~30s).</li>
+<li>Pair GeoTag device and capture site/batch evidence.</li>
+<li>GCI evaluates eligibility (~2 min).</li>
+<li>CRX issues permit (≤ 6h, same‑day).</li>
+<li>Create lot and seal custody in VaultMark.</li>
+<li>List eligible lot on SGX.</li>
+<li>Execute atomic settlement via PvP (< 1s).</li>
+</ol>
+</sub>
 ```mermaid
 sequenceDiagram
   participant VIA as "VIA App (Producer)"
@@ -111,11 +122,9 @@ sequenceDiagram
   Note over PVP: < 1s
 ```
 
-#### Diagram legend
-- Solid arrows: action or request between participants
-- Dashed arrows: non‑blocking signal, reference, or gate
-- Notes: "Note over X" indicates timing or context for that participant
-- Quoted participant names include roles for clarity (e.g., "CRX (Permits)")
+<sub>
+<b>Diagram legend:</b> Solid arrows = action/request; dashed arrows = signal/reference/gate; notes = "Note over X" for timing/context; quoted names include roles (e.g., "CRX (Permits)").
+</sub>
 
 ### Regulator (CRX operator)
 - Intake arrives with TradePass identity and GCI eligibility attached
