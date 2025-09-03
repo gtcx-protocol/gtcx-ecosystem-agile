@@ -12,22 +12,19 @@ Last updated: 2025‑09‑03 08:00Z
 
 ## Table of contents 🧭
 - Executive summary ✨
-- Who this is for
- - What is needed for trade (and why)
-- Three‑tier architecture (overview) 🏗️
+- Who this is for 🎯
+ - What is needed for trade (and why) ✅
 - Day in the life 📽️
-- Problems we solve
-- Protocols (foundation) — deep dives
-- Use cases (flagship)
-- Pilot plan (one week)
-- Q&A
-- Glossary
-- Three‑tier architecture
-- Open‑source platforms & tooling
-- End‑to‑end data flow and visuals
-- Platforms overview
-- FAQ and Glossary
-- Community & contributions
+- Problems we solve 🧩
+- Protocols (foundation) — deep dives 📜
+- Three‑tier architecture 🏗️
+- Open‑source platforms & tooling 🧰
+- End‑to‑end data flow and visuals 🔄
+- Five flagship use cases 🚀
+- Pilot in one week (checklist) 🧪
+- Platforms overview 🏛️
+- FAQ and Glossary 🙋
+- Community & contributions 🤝
 
 > Start here: protocols index → [core protocols](research/02-protocol-specifications/l1-core-protocols/) • platforms overview → [platforms readme](gtcx-ecosystem-platforms/readme.md) • e2e demo (PANX↔Cortex) → [cognitive readme](gtcx-ecosystem-cognitive/readme.md)
 
