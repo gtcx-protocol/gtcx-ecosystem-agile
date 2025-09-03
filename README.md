@@ -235,10 +235,12 @@ Trade today fails in predictable ways. The GTCX stack addresses each failure wit
 | Digital infrastructure | Paper/PDF | 2025 still manual |
 
 ### Structural failures
-- Identity without trust (weeks to verify; rampant fraud)
-- Location without proof (origin mixing; unverifiable chain)
-- Compliance without speed (rules change; processes don’t)
-- Settlement without certainty (intermediaries; failed trades)
+| Structural failure | Description |
+| --- | --- |
+| Identity without trust | Weeks to verify; rampant fraud |
+| Location without proof | Origin mixing; unverifiable chain |
+| Compliance without speed | Rules change; processes don’t |
+| Settlement without certainty | Intermediaries; failed trades |
 
 ## Protocols (foundation)
 Core protocol specifications live in `gtcx-ecosystem-research/02-protocol-specifications/`.
