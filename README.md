@@ -1,11 +1,41 @@
 # GTCX Protocol Ecosystem
 
-Public home for the GTCX protocols, reference services, and open‑source platforms.
+Public home for the GTCX verification protocols and sovereign platforms.
 
-Updated: 2025-09-02
+![License](https://img.shields.io/badge/License-MIT-yellow.svg) ![Updated](https://img.shields.io/badge/Updated-2025--09--03-success) ![Protocols](https://img.shields.io/badge/Protocols-5-blue) ![Sovereignty](https://img.shields.io/badge/Design-Sovereignty--Preserving-brightgreen)
 
-## What is GTCX?
-GTCX is an open protocol stack for trustworthy global trade. It focuses on verifiable events, culturally aware intelligence, and practical tools that work inclusively across regions.
+Last updated: 2025‑09‑03 06:50Z
+
+## Table of contents
+- Executive summary
+- Who this is for
+- Problems we solve
+- Protocols (foundation) — deep dives
+- Three‑tier architecture
+- Open‑source platforms & tooling
+- End‑to‑end data flow and visuals
+- Five flagship use cases
+- Pilot in one week (checklist)
+- Spec links
+- FAQ and Glossary
+- Community & contributions
+
+> Start here: protocols index → `research/02-protocol-specifications/l1-core-protocols/` • platforms overview → `gtcx-ecosystem-platforms/README.md` • e2e demo (PANX↔Cortex) → `gtcx-ecosystem-cognitive/README.md`
+
+## Executive summary
+GTCX standardizes how facts are verified, approved, and preserved in global trade. Five core protocols (TradePass, GCI, GeoTag, VaultMark, PvP) produce sovereign proofs that platforms (CRX, SGX, AGX) use to automate permits, markets, and cross‑border settlement.
+
+## Who this is for
+- Governments and regulators seeking sovereignty‑preserving digital infrastructure
+- Verified producers and cooperatives needing market access with trust guarantees
+- Exchanges, vaults, and banks integrating proof‑based settlement
+- Integrators and open‑source builders adopting a protocol‑first stack
+
+## Problems we solve
+- Fragmented identity and inconsistent policy enforcement across jurisdictions
+- Location/provenance fraud and unverifiable documentation
+- Trust bottlenecks that slow approvals, trading, and settlement
+- Audit gaps and verification “washing” through custody chains
 
 ## Protocols (foundation)
 Core protocol specifications live in `gtcx-ecosystem-research/02-protocol-specifications/`.
@@ -17,12 +47,81 @@ Core protocol specifications live in `gtcx-ecosystem-research/02-protocol-specif
 
 Transport and data contracts use JSON Schema with versioned `$id`.
 
+### The five protocols (deep dives)
+- TradePass (Identity & Authorization): DIDs/VCs, role catalogs, time‑boxed grants, least‑privilege; composes with GCI and PANX weights
+- GCI (Compliance & Policy): attestations, algorithmic scoring, jurisdictional policies, predictive risk; gates roles and settlement
+- GeoTag (Evidence): multi‑constellation GPS, satellite correlation, HSM signatures, Merkle proofs; replaces claims with proofs
+- VaultMark (Audit): physical‑digital binding (NFC/RFID), digital twins, immutable custody; prevents verification washing
+- PvP (Settlement): atomic payment‑versus‑physical; settlement only when proof+policy pass
+
 ```mermaid
 flowchart TD
   A[Protocols] --> B[Reference Services]
   B --> C[Open Platforms]
   C --> D[Applications & Communities]
 ```
+
+### Spec links
+- CRX/SGX Exchange Integration: `research/02-protocol-specifications/l3-exchange-layer/crx-sgx-exchange-integration.md`
+- AGX (Authenticated Global Exchange): `research/02-protocol-specifications/l3-exchange-layer/agx-authenticated-global-exchange.md`
+
+### Verification layers → platforms (visual)
+```mermaid
+flowchart LR
+  subgraph "Verification Protocols"
+    TP[TradePass]
+    GCI[GCI]
+    GT[GeoTag]
+    VM[VaultMark]
+    PVP[PvP]
+  end
+  subgraph "Reference Services"
+    PANX[PANX (Verification)]
+    ANISA[ANISA (Cultural)]
+    CORTEX[Cortex (Analytics)]
+  end
+  subgraph "Platforms"
+    CRX[CRX Regulatory]
+    SGX[SGX Exchange]
+    AGX[AGX Global]
+  end
+  TP --> PANX
+  GCI --> PANX
+  GT --> PANX
+  VM --> PANX
+  PVP --> PANX
+  ANISA -. enrich .-> PANX
+  PANX --> CORTEX
+  PANX --> CRX
+  PANX --> SGX
+  PANX --> AGX
+```
+
+## Five flagship use cases
+- Permit issuance: GCI + TradePass + VaultMark; hours instead of weeks
+- Depart/arrive verification: GeoTag + VaultMark → PANX proof; real‑time alerts
+- Corridor policy enforcement: GCI + TradePass; transparent, consistent governance
+- Milestone‑based payment: PANX proof → PvP + VaultMark; risk‑free release
+- Dispute packet: VaultMark + GeoTag + GCI; complete sealed evidence
+
+## Pilot in one week (checklist)
+1) Site onboarding: issue TradePass, bind GeoTag devices, enable VaultMark
+2) Capture: record depart/arrive events with signed evidence
+3) Verify: PANX proof thresholds per event type
+4) Govern: GCI policy gates; simulate corridor rules
+5) Settle: dry‑run PvP release conditions
+6) Report: sealed audit bundle + metrics
+
+## FAQ
+- Is PANX a protocol? No. PANX is a verification service that consumes protocol artifacts to produce network proofs.
+- What’s sealed? Proofs, custody events, and artifacts via VaultMark.
+- How do I pilot? Start with GeoTag + VaultMark at one site; add GCI/TradePass; then PANX; gate PvP last.
+
+## Glossary
+- Protocol — shared rulebook and data contracts
+- Proof — evidence‑backed claim you can independently verify
+- Seal — tamper‑evident record preserved for audit
+- Atomic settlement — payment/delivery only complete together
 
 ## Three‑tier architecture
 1) Protocols — specifications and data contracts (research repo)
@@ -106,3 +205,7 @@ flowchart TD
 - Contributions welcome: docs, code, research
 
 MIT License
+
+---
+
+Contributions & governance: open issues/PRs against component repos; follow CHANGELOGs in each for release notes.
