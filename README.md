@@ -195,7 +195,7 @@ flowchart LR
     VM["VaultMark"]
     PVP["PvP"]
   end
-  subgraph RS["Reference Services"]
+  subgraph RS["Intelligence Systems"]
     PANX["PANX Verification"]
     ANISA["ANISA Cultural"]
     CORTEX["Cortex Analytics"]
@@ -245,7 +245,7 @@ flowchart LR
 
 ## Three‑tier architecture
 1) Protocols — specifications and data contracts (research repo)
-2) Reference services — PANX, Cortex, ANISA (this org)
+2) Intelligence systems — PANX, Cortex, ANISA (this org)
 3) Platforms & apps — open‑source frontends, terminals, and integrations
 
 #### Protocols layer
@@ -259,7 +259,7 @@ flowchart LR
 ```
 Protocols are composable, not strictly linear. TradePass authorizes capture, GeoTag produces signed evidence, VaultMark seals artifacts, and PvP gates settlement. GCI applies policies into both authorization and settlement.
 
-#### Reference services layer
+#### Intelligence systems layer
 ```mermaid
 flowchart LR
   ANISA["ANISA Cultural"] <--> PANX["PANX Verification"]
@@ -267,7 +267,7 @@ flowchart LR
   CORTEX -.->|anomaly alerts / re‑verify triggers| PANX
   CORTEX -.->|insights / topics| ANISA
 ```
-Reference services enrich, verify, and analyze protocol artifacts. ANISA adds cultural context; PANX turns evidence + policy into network proofs; Cortex aggregates and visualizes signals for operators.
+Intelligence systems enrich, verify, and analyze protocol artifacts. ANISA adds cultural context; PANX turns evidence + policy into network proofs; Cortex aggregates and visualizes signals for operators.
 
 ##### What actually happens (inputs → processing → outputs)
 - ANISA (enrichment)
@@ -340,7 +340,7 @@ flowchart LR
 ```
 Platforms interoperate rather than strictly chain. CRX feeds sovereign approval/compliance into SGX; SGX returns market and custody events back to CRX. AGX connects multiple SGX instances to international buyers; limited CRX↔AGX links exist for export controls and revenue reporting.
 
-## Reference services (live repos)
+## Intelligence systems (live repos)
 - PANX (Oracle/Verification): `gtcx-ecosystem-cognitive/panx` — consensus, proofs, forward to Cortex
 - Cortex (Analytics): `gtcx-ecosystem-cognitive/cortex` — ingest, summary, anomalies
 - ANISA (Cultural Intelligence): `gtcx-ecosystem-anisa` — analyze/assess endpoints for enrichment
