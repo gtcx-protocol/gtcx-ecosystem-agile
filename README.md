@@ -611,37 +611,7 @@ flowchart LR
   B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> C1 --> C2 --> C3 --> C4
 ```
 
-#### Now → Next → Later (concise)
-- Now: protocol hardening; schema compatibility CI; reference SDKs.
-- Next: federation, multi‑rail settlement, secure attestation, smart seals, persistence/retention, observability.
-- Later: PANX/Cortex agentic behaviors; corridor pilots; onboarding funnels.
-- Protocol hardening & specification snapshots
-  - TradePass, GCI, GeoTag, VaultMark, PvP: stabilize core semantics and data contracts
-  - Snapshot cadence and change control (proposal → review → RFC → snapshot)
-  - Conformance test suite and fixtures per protocol (positive/negative cases)
-- Schema‑first development
-  - Semantic versioning rules, deprecation windows, and upgrade playbooks
-  - Reference client SDKs for TypeScript/Python (schema‑bound types, validators)
-  - CI gates for schema compatibility and sample instance coverage
-- Interoperability & federation (from protocols repo roadmap)
-  - TradePass federation and identity linking across jurisdictions
-  - PvP multi‑rail connectors (banking, mobile money, crypto) with atomicity proofs
-  - GeoTag secure attestation (device certs, HSM rotation, field audit trail)
-  - VaultMark smart seal program and digital twin APIs
-- Persistence & retention
-  - Managed Postgres/Timescale for proofs/events, partitioning and TTL policies
-  - Audit archive export (cold storage bundles signed by VaultMark)
-- Observability
-  - Service metrics and SLOs; dashboards for operators and regulators
-  - Distributed tracing with selective sampling; alert runbooks
-- Agentic behaviors (progressive)
-  - PANX: borderline re‑verify plans; dynamic thresholds informed by risk/quality
-  - Cortex: anomaly watchers, action proposals, operator copilot integrations
-- Pilots & reference implementations
-  - Corridor deployments with partners; playbooks for CRX/SGX/AGX rollout
-  - Telegram onboarding funnels linked to TradePass/GeoTag quickstarts
-
-See also: Protocols roadmap in [protocols readme](gtcx-ecosystem-protocols/readme.md) (Future Roadmap section).
+<!-- Consolidated roadmap details to the protocols repository and internal planning docs for brevity. -->
 
 ## Community
 - Issues and discussions in each repo (use repo issue trackers)
