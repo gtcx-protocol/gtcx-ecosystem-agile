@@ -8,7 +8,7 @@ Public home for the GTCX verification protocols and sovereign platforms.
 
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg) ![Updated](https://img.shields.io/badge/Updated-2025--09--03-success) ![Protocols](https://img.shields.io/badge/Protocols-5-blue) ![Sovereignty](https://img.shields.io/badge/Design-Sovereignty--Preserving-brightgreen)
 
-Last updated: 2025‑09‑03 07:50Z
+Last updated: 2025‑09‑03 08:00Z
 
 ## Table of contents
 - Executive summary
@@ -70,6 +70,60 @@ Outcomes (targets from the technical advisors primer):
 | Buyers & traders (SGX/AGX) | Opaque provenance; counterparty risk; slow settlement | Proof‑backed listings; PvP atomic settlement | Trusted supply; <1s settlement at execution |
 | Banks/PSPs & settlement rails | Reconciliation risk; chargebacks; manual compliance | PvP orchestration; proof references; policy gating | Both‑or‑neither finality; automated compliance |
 | Auditors & civil society | ESG unverifiable; after‑the‑fact investigations | Sealed artifacts (VaultMark), location proofs, policy history | Real‑time verification; credible oversight |
+
+## Day in the life (epic, but real)
+
+### Producer (cooperative lead)
+```mermaid
+sequenceDiagram
+  participant VIA as VIA App (Producer)
+  participant TP as TradePass
+  participant GT as GeoTag
+  participant GCI as GCI
+  participant CRX as CRX (Permits)
+  participant VM as VaultMark
+  participant SGX as SGX
+  participant PVP as PvP
+
+  VIA->>TP: Register cooperative (face + ID)
+  Note right of TP: ~30s
+  VIA->>GT: Pair device; capture site & batch evidence
+  Note right of GT: instant proofs
+  GT->>GCI: Submit evidence for eligibility
+  Note right of GCI: ~2 min
+  GCI-->>CRX: Eligibility attestation
+  CRX->>VIA: Permit issued
+  Note right of CRX: ≤ 6h (same‑day)
+  VIA->>VM: Create lot; seal custody
+  VM->>SGX: List eligible lot
+  SGX-->>PVP: Execute trade with atomic settlement
+  Note right of PVP: < 1s
+```
+
+### Regulator (CRX operator)
+- Intake arrives with TradePass identity and GCI eligibility attached
+- CRX routes to departments; SLA timers start automatically
+- Evidence links deep‑link to GeoTag artifacts and VaultMark seals
+- Approver signs digitally; permit is issued with audit hash
+- Dashboard shows queue, throughput, revenue capture, and anomalies
+- Typical path: eligibility received ~2 min; permit turnaround same‑day (≤ 6h)
+
+### Buyer (international)
+```mermaid
+sequenceDiagram
+  participant AGX as AGX (Global)
+  participant SGX as SGX (National)
+  participant VM as VaultMark
+  participant PANX as PANX (Proofs)
+  participant PVP as PvP
+
+  AGX->>SGX: Discover proof‑backed listings (federated)
+  SGX-->>PANX: Request lot eligibility proof
+  PANX-->>SGX: {achieved:true, percentage:0.82, hints:[...]}
+  AGX->>PVP: Lock funds / initiate atomic swap
+  PVP->>VM: Verify custody reference
+  PVP-->>AGX: Both‑or‑neither execution (<1s)
+```
 
 ## Problems we solve
 - Fragmented identity and inconsistent policy enforcement across jurisdictions
