@@ -8,7 +8,7 @@ Public home for the GTCX verification protocols and sovereign platforms.
 
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg) ![Updated](https://img.shields.io/badge/Updated-2025--09--03-success) ![Protocols](https://img.shields.io/badge/Protocols-5-blue) ![Sovereignty](https://img.shields.io/badge/Design-Sovereignty--Preserving-brightgreen)
 
-Last updated: 2025‑09‑03 07:35Z
+Last updated: 2025‑09‑03 07:45Z
 
 ## Table of contents
 - Executive summary
@@ -49,6 +49,17 @@ Outcomes (targets from the technical advisors primer):
 - Verified producers and cooperatives needing market access with trust guarantees (direct access; better pricing)
 - Exchanges, vaults, and banks integrating proof‑based, atomic settlement
 - Integrators and open‑source builders adopting a protocol‑first stack
+
+## Actors and the problems we solve
+| Actor | Pain today | What GTCX provides | Outcomes (targets) |
+| --- | --- | --- | --- |
+| Producers & cooperatives | Identity/origin not trusted; 6‑month permits; predatory middlemen; no price discovery | TradePass, GeoTag, GCI → CRX same‑day eligibility; SGX listing; VaultMark custody; PvP settlement | Onboard ≤1 day; eligibility ~2 min; better pricing; fraud reduction |
+| Exporters & aggregators | Paper chains; disputed lots; delays at ports | VaultMark sealed custody; PANX proofs; CRX/SGX routing | Instant ownership verification; fewer holds; faster throughput |
+| Regulators & ministries (CRX) | Fragmented systems; leakage; long queues | CRX workflow + policy engine; GCI attestations; audit trail | Permits ≤ 6 hours; +revenue capture; transparent audits |
+| Vaults, warehouses, logistics | Mixed inventory risk; manual logs; dispute exposure | VaultMark digital twins; GeoTag arrival/departure proofs | No mixing; verifiable chain; insurance/risk down |
+| Buyers & traders (SGX/AGX) | Opaque provenance; counterparty risk; slow settlement | Proof‑backed listings; PvP atomic settlement | Trusted supply; <1s settlement at execution |
+| Banks/PSPs & settlement rails | Reconciliation risk; chargebacks; manual compliance | PvP orchestration; proof references; policy gating | Both‑or‑neither finality; automated compliance |
+| Auditors & civil society | ESG unverifiable; after‑the‑fact investigations | Sealed artifacts (VaultMark), location proofs, policy history | Real‑time verification; credible oversight |
 
 ## Problems we solve
 - Fragmented identity and inconsistent policy enforcement across jurisdictions
