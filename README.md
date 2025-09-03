@@ -246,7 +246,7 @@ flowchart LR
 ## Three‑tier architecture
 1) Protocols — specifications and data contracts (research repo)
 2) Intelligence systems — PANX, Cortex, ANISA (this org)
-3) Platforms & apps — open‑source frontends, terminals, and integrations
+3) Platforms and apps — Exchanges and Field‑First Mobile Applications
 
 #### Protocols layer
 ```mermaid
