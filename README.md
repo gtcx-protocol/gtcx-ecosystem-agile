@@ -418,7 +418,6 @@ flowchart LR
 Platforms interoperate rather than strictly chain. CRX feeds sovereign approval/compliance into SGX; SGX returns market and custody events back to CRX. AGX connects multiple SGX instances to international buyers; limited CRX↔AGX links exist for export controls and revenue reporting.
 
 ## Intelligence systems (live repos)
-<sub>[Back to top](#table-of-contents-)</sub>
 - PANX (Oracle/Verification): `gtcx-ecosystem-cognitive/panx` — consensus, proofs, forward to Cortex
 - Cortex (Analytics): `gtcx-ecosystem-cognitive/cortex` — ingest, summary, anomalies
 - ANISA (Cultural Intelligence): `gtcx-ecosystem-anisa` — analyze/assess endpoints for enrichment
@@ -426,7 +425,6 @@ Platforms interoperate rather than strictly chain. CRX feeds sovereign approval/
 Each service includes: README, user/agent guides, runbooks, deploy guides, JSON Schemas, and changelogs.
 
 ## Open‑source platforms & tooling
-<sub>[Back to top](#table-of-contents-)</sub>
 - CRX — government workflow automation & regulatory processing
 - SGX — sovereign national exchange & settlement
 - AGX — authenticated global exchange (international marketplace)
@@ -440,7 +438,6 @@ Each service includes: README, user/agent guides, runbooks, deploy guides, JSON 
 - See: [platforms readme](gtcx-ecosystem-platforms/readme.md) (platforms overview and app shells)
 
 ### End‑to‑end trade process (custody before SGX)
-<sub>[Back to top](#table-of-contents-)</sub>
 ```mermaid
 flowchart TD
   classDef small font-size:10px,stroke-width:1px;
@@ -464,7 +461,6 @@ flowchart TD
 ```
 
 ### Verification gates (at a glance)
-<sub>[Back to top](#table-of-contents-)</sub>
 ```mermaid
 flowchart LR
   TP["TradePass"] --> GT["GeoTag"] --> GCI["GCI Eligibility"] --> VM["VaultMark Custody"] --> PVP["PvP"]
@@ -474,11 +470,9 @@ flowchart LR
 ```
 
 ### What this enables (plain English)
-<sub>[Back to top](#table-of-contents-)</sub>
 - A farmer can become trade‑eligible the same day (TradePass, GeoTag, GCI, CRX), list nationally (SGX), and settle with an international buyer atomically (PvP) — with every custody move sealed (VaultMark) and every step independently verifiable.
 
 ### End‑to‑end sequence (eligibility first, then trade)
-<sub>[Back to top](#table-of-contents-)</sub>
 <sub>
 <ol>
 <li>CRX registers and issues TradePass.</li>
@@ -511,7 +505,6 @@ sequenceDiagram
 ```
 
 ### “Trade in ~6 hours”
-<sub>[Back to top](#table-of-contents-)</sub>
 - Identity verified (TradePass): ~30 seconds
 - Site/production evidence (GeoTag): instant
 - Compliance eligibility (GCI): ~2 minutes
@@ -520,7 +513,6 @@ sequenceDiagram
 - Atomic settlement (PvP): < 1 second when trade executes
 
 ### Performance snapshots
-<sub>[Back to top](#table-of-contents-)</sub>
 VaultMark (chain of custody)
 
 | Before | After (VaultMark) |
