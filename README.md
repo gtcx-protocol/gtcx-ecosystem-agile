@@ -27,7 +27,7 @@ Last updated: 2025‑09‑03 08:00Z
 - FAQ and Glossary
 - Community & contributions
 
-> Start here: protocols index → `research/02-protocol-specifications/l1-core-protocols/` • platforms overview → `gtcx-ecosystem-platforms/README.md` • e2e demo (PANX↔Cortex) → `gtcx-ecosystem-cognitive/README.md`
+> Start here: protocols index → [core protocols](research/02-protocol-specifications/l1-core-protocols/) • platforms overview → [platforms readme](gtcx-ecosystem-platforms/readme.md) • e2e demo (PANX↔Cortex) → [cognitive readme](gtcx-ecosystem-cognitive/readme.md)
 
 ## Executive summary ✨
 GTCX is sovereign verification infrastructure for global trade. Five core protocols — TradePass, GeoTag, GCI, VaultMark, and PvP — turn real‑world statements and documents into independently verifiable proofs that CRX, SGX, and AGX use to automate permits, listings, and settlement. The result is moving from weeks of paperwork and opaque intermediaries to same‑day approvals and sub‑second settlement.
@@ -471,7 +471,7 @@ Each service includes: README, user/agent guides, runbooks, deploy guides, JSON 
 ### Access layer: CaaS, VIA, VXA
 - CaaS: simple APIs that wrap protocol workflows for apps and services
 - VIA (teach & guide) and VXA (inspect & verify) mobile apps leverage the protocols end‑to‑end
-- See: `gtcx-ecosystem-platforms/README.md` (platforms overview and app shells)
+- See: [platforms readme](gtcx-ecosystem-platforms/readme.md) (platforms overview and app shells)
 
 ### End‑to‑end trade process (custody before SGX)
 <sub>[Back to top](#table-of-contents-)</sub>
@@ -590,12 +590,12 @@ PvP (settlement)
 - Start in Telegram (TradeBox): search for the official bot handle and tap Start
 - Local Docker Compose (PANX + Cortex + DB)
   - Compose: `gtcx-ecosystem-cognitive/docker-compose.yml`
-  - PANX service: `gtcx-ecosystem-cognitive/panx/service/README.md`
+  - PANX service: [panx service readme](gtcx-ecosystem-cognitive/panx/service/readme.md)
 - GCP VM (TLS via Caddy)
-  - Overlay & guide: `gtcx-ecosystem-cognitive/infra/compose-prod/README.md`
+  - Overlay & guide: [compose‑prod readme](gtcx-ecosystem-cognitive/infra/compose-prod/readme.md)
   - Env template: `gtcx-ecosystem-cognitive/infra/compose-prod/ENV.example`
 - ANISA API
-  - Deploy guide: `gtcx-ecosystem-anisa/agile-pm/deploy_gcp_vm.md`
+  - Deploy guide: [ANISA deploy guide](gtcx-ecosystem-anisa/agile-pm/deploy_gcp_vm.md)
 - Planned
   - Helm charts & GKE Autopilot manifests
   - Terraform modules for VM + DNS + secrets
@@ -660,7 +660,7 @@ flowchart LR
   - Corridor deployments with partners; playbooks for CRX/SGX/AGX rollout
   - Telegram onboarding funnels linked to TradePass/GeoTag quickstarts
 
-See also: Protocols roadmap in `gtcx-ecosystem-protocols/README.md` (Future Roadmap section).
+See also: Protocols roadmap in [protocols readme](gtcx-ecosystem-protocols/readme.md) (Future Roadmap section).
 
 ## Community
 - Issues and discussions in each repo (use repo issue trackers)
@@ -671,7 +671,7 @@ MIT License
 
 ---
 
-Contributions & governance: open issues/PRs against component repos; follow per‑component CHANGELOGs for releases (`gtcx-ecosystem-cognitive/CHANGELOG.md`, `gtcx-ecosystem-anisa/CHANGELOG.md`, `gtcx-ecosystem-cognitive/panx/changelog.md`, `gtcx-ecosystem-cognitive/cortex/changelog.md`).
+Contributions & governance: open issues/PRs against component repos; follow per‑component CHANGELOGs for releases ([cognitive changelog](gtcx-ecosystem-cognitive/changelog.md), [anisa changelog](gtcx-ecosystem-anisa/changelog.md), [panx changelog](gtcx-ecosystem-cognitive/panx/changelog.md), [cortex changelog](gtcx-ecosystem-cognitive/cortex/changelog.md)).
 
 ## Telegram onboarding (fast path)
 
