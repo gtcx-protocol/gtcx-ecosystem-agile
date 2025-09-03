@@ -131,6 +131,52 @@ flowchart LR
 ```
 Intelligence systems enrich, verify, and analyze protocol artifacts. ANISA adds cultural context; PANX turns evidence + policy into network proofs; Cortex aggregates and visualizes signals for operators.
 
+##### PANX — verification proof generation (sequence)
+```mermaid
+sequenceDiagram
+  participant Client as "Client (CRX/SGX/AGX)"
+  participant PANX as "PANX (Verification Oracle)"
+  participant Protocols as "Verification Protocols"
+  participant Vault as "VaultMark (Audit Receipts)"
+  Client->>PANX: Submit evidence bundle + ruleset
+  PANX->>Protocols: "TradePass", "GeoTag", "GCI" checks
+  Protocols-->>PANX: Scores, attestations, proofs
+  PANX->>PANX: Consensus + explainability
+  PANX-->>Client: Signed verification proof
+  PANX->>Vault: Seal proof + custody receipt
+  Vault-->>Client: Receipt ID
+```
+
+##### Cortex — event ingestion and analytics (flow)
+```mermaid
+flowchart TD
+  A["Event Sources (PANX proofs, CRX/SGX/AGX events)"]
+  B["Ingest API"]
+  C["Stream/Queue"]
+  D["Transform & Enrich (ANISA)"]
+  E["Analytics & Alerts"]
+  F["Warehouse (Postgres)"]
+  G["APIs & Dashboards"]
+  A-->B-->C-->D-->E
+  D-->F
+  E-->G
+  F-->G
+```
+
+##### ANISA — cultural intelligence enrichment (sequence)
+```mermaid
+sequenceDiagram
+  participant Service as "Service (CRX/SGX/AGX)"
+  participant ANISA as "ANISA (Cultural Intelligence)"
+  participant Models as "Models/Rules"
+  participant PANX as "PANX (Optional metadata attach)"
+  Service->>ANISA: Context (locale, entity, task)
+  ANISA->>Models: Retrieve policies, patterns, language
+  Models-->>ANISA: Hints, features
+  ANISA-->>Service: Structured guidance/labels
+  ANISA->>PANX: Attach explainability metadata
+```
+
 #### Platforms layer 🏛️
 ```mermaid
 flowchart LR
@@ -473,16 +519,7 @@ flowchart LR
 - A farmer can become trade‑eligible the same day (TradePass, GeoTag, GCI, CRX), list nationally (SGX), and settle with an international buyer atomically (PvP) — with every custody move sealed (VaultMark) and every step independently verifiable.
 
 ### End‑to‑end sequence (eligibility first, then trade)
-<sub>
-<ol>
-<li>CRX registers and issues TradePass.</li>
-<li>TradePass authorizes GeoTag capture.</li>
-<li>GeoTag submits signed evidence to GCI.</li>
-<li>GCI returns eligibility to TradePass/CRX.</li>
-<li>When ready: create VaultMark custody lot.</li>
-<li>PvP reads custody/proof references and settles atomically.</li>
-</ol>
-</sub>
+Steps: CRX issues TradePass → TradePass authorizes GeoTag → GeoTag submits to GCI → GCI returns eligibility → Create VaultMark lot → PvP settles atomically.
 ```mermaid
 sequenceDiagram
   participant CRX as "CRX (register)"
