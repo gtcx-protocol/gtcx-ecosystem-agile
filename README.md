@@ -358,14 +358,6 @@ Day 5 — Report and review
 Telegram TradeBox
 - Chat‑first onboarding (multi‑language, low bandwidth) for producers and clerks; see the TradeBox journey below.
 
-### Q&A
-- Is PANX a protocol?
-  - No. PANX is a verification service that consumes protocol artifacts to produce network proofs.
-- What’s sealed?
-  - Proofs, custody events, and artifacts via VaultMark.
-- How do I run a pilot quickly?
-  - Start with GeoTag + VaultMark at one site; add GCI/TradePass; then PANX; gate PvP last.
-
 ### Glossary
 - Protocol — shared rulebook and data contracts
 - Proof — evidence‑backed claim you can independently verify
