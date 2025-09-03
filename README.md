@@ -75,6 +75,17 @@ Outcomes (targets):
 - VaultMark: continuous digital chain of custody; instant ownership verification; sealed audit
 - PvP: atomic payment‑versus‑physical; settlement < 1s; scales to 10M+ daily transactions
 
+### What is needed for trade (and why)
+Buyers, regulators, and exchanges ask the same questions. Each answer must be verifiable.
+
+| Question | How GTCX answers |
+| :-- | :-- |
+| Who am I buying from? | TradePass proves the identity of people and organizations and grants time‑boxed roles (e.g., exporter) so authorization is portable and auditable. |
+| Where is the product sourced from? | GeoTag produces cryptographic location and timestamped evidence for production and transit events; VaultMark binds that evidence to sealed custody. |
+| Is it responsibly sourced and compliant? | GCI evaluates eligibility against jurisdictional policies using attached evidence; CRX turns the result into a permit with an audit trail. |
+| Do the goods I receive match what was listed? | VaultMark maintains an unbroken digital chain‑of‑custody and instant ownership checks; PANX provides proof thresholds per event type. |
+| Will payment and delivery happen together? | PvP performs atomic “both‑or‑neither” settlement using VaultMark custody references and PANX proof links, eliminating exposure. |
+
 ### Who this is for
 - Government and industry regulators: sovereignty‑preserving digital infrastructure for permit automation, consistent policy application, and auditable outcomes.
 - Financial institutions (trade finance, banks, PSPs): proof‑backed execution and atomic settlement with clear policy gates and audit trails.
