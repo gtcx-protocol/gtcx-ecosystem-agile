@@ -244,11 +244,14 @@ Trade today fails in predictable ways. The GTCX stack addresses each failure wit
 
 ## Protocols (foundation)
 Core protocol specifications live in `gtcx-ecosystem-research/02-protocol-specifications/`.
-- TradePass — identity & authorization (DIDs/VCs, roles, entitlements)
-- GCI — compliance & policy (credentials, attestations, scoring)
-- GeoTag — evidence (cryptographic location, timestamping, device attestation)
-- VaultMark — audit (sealed receipts, custody chain)
-- PvP — settlement (post‑verification, atomic payment‑versus‑physical)
+
+| Protocol | Purpose | Key elements |
+| --- | --- | --- |
+| TradePass | Identity & authorization | DIDs/VCs; roles; entitlements |
+| GCI | Compliance & policy | credentials; attestations; scoring |
+| GeoTag | Evidence | cryptographic location; timestamping; device attestation |
+| VaultMark | Audit | sealed receipts; custody chain |
+| PvP | Settlement | post‑verification; atomic payment‑versus‑physical |
 
 Transport and data contracts use JSON Schema with versioned `$id`.
 
