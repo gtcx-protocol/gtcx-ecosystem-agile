@@ -8,7 +8,7 @@ Public home for the GTCX verification protocols and sovereign platforms.
 
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg) ![Updated](https://img.shields.io/badge/Updated-2025--09--03-success) ![Protocols](https://img.shields.io/badge/Protocols-5-blue) ![Sovereignty](https://img.shields.io/badge/Design-Sovereignty--Preserving-brightgreen)
 
-Last updated: 2025‑09‑03 07:20Z
+Last updated: 2025‑09‑03 07:35Z
 
 ## Table of contents
 - Executive summary
@@ -45,9 +45,9 @@ Outcomes (targets from the technical advisors primer):
 - PvP: atomic payment‑versus‑physical; settlement < 1s; scales to 10M+ daily transactions
 
 ## Who this is for
-- Governments and regulators seeking sovereignty‑preserving digital infrastructure
-- Verified producers and cooperatives needing market access with trust guarantees
-- Exchanges, vaults, and banks integrating proof‑based settlement
+- Governments and regulators seeking sovereignty‑preserving digital infrastructure (e.g., permits in ≤ 6 hours; +40% revenue capture seen in models)
+- Verified producers and cooperatives needing market access with trust guarantees (direct access; better pricing)
+- Exchanges, vaults, and banks integrating proof‑based, atomic settlement
 - Integrators and open‑source builders adopting a protocol‑first stack
 
 ## Problems we solve
@@ -55,6 +55,21 @@ Outcomes (targets from the technical advisors primer):
 - Location/provenance fraud and unverifiable documentation
 - Trust bottlenecks that slow approvals, trading, and settlement
 - Audit gaps and verification “washing” through custody chains
+
+### Market reality (from primer)
+| Metric | Current State | Impact |
+| ---| ---| --- |
+| Annual commodity trade | ~$13T | Massive addressable scope |
+| Value lost to frictions | ~30% (≈$3.9T) | Efficiency upside |
+| Permit processing | ~6 months | Deals die waiting |
+| Origin verification | ~0% | ESG impossible |
+| Digital infrastructure | Paper/PDF | 2025 still manual |
+
+### Structural failures
+- Identity without trust (weeks to verify; rampant fraud)
+- Location without proof (origin mixing; unverifiable chain)
+- Compliance without speed (rules change; processes don’t)
+- Settlement without certainty (intermediaries; failed trades)
 
 ## Protocols (foundation)
 Core protocol specifications live in `gtcx-ecosystem-research/02-protocol-specifications/`.
@@ -72,6 +87,15 @@ Transport and data contracts use JSON Schema with versioned `$id`.
 - GeoTag (Evidence): multi‑constellation GPS, satellite correlation, HSM signatures, Merkle proofs; replaces claims with proofs
 - VaultMark (Audit): physical‑digital binding (NFC/RFID), digital twins, immutable custody; prevents verification washing
 - PvP (Settlement): atomic payment‑versus‑physical; settlement only when proof+policy pass
+
+#### Protocol outcomes (from primer)
+| Layer | Before | After |
+| --- | --- | --- |
+| TradePass | 3 weeks manual checks | ~30 seconds verification |
+| GeoTag | Origin unverifiable | Instant cryptographic location proof |
+| GCI | Weeks to evaluate | ~2 minutes eligibility |
+| VaultMark | Custody breaks; disputes | Continuous sealed audit; instant ownership check |
+| PvP | 3–5 day wires; exposure | Atomic settlement < 1s; both‑or‑neither finality |
 
 <!-- Removed high-level A→B→C diagram to reduce redundancy -->
 
@@ -282,6 +306,9 @@ flowchart LR
   CRX["CRX Permit"] -.->|export approval| VM
   PANX -.->|proof reference| PVP
 ```
+
+### What this enables (plain English)
+- A farmer can become trade‑eligible the same day (TradePass, GeoTag, GCI, CRX), list nationally (SGX), and settle with an international buyer atomically (PvP) — with every custody move sealed (VaultMark) and every step independently verifiable.
 
 ### End‑to‑end sequence (eligibility first, then trade)
 ```mermaid
