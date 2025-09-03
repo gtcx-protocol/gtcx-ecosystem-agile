@@ -11,24 +11,17 @@ Public home for the GTCX verification protocols and sovereign platforms.
 Last updated: 2025‑09‑03 08:00Z
 
 ## Table of contents 🧭
-- Executive summary ✨
-- Who this is for 🎯
- - What is needed for trade (and why) ✅
-- Day in the life 📽️
-- Problems we solve 🧩
-- Protocols (foundation) — deep dives 📜
-- Three‑tier architecture 🏗️
-- Open‑source platforms & tooling 🧰
-- End‑to‑end data flow and visuals 🔄
-- Five flagship use cases 🚀
-- Pilot in one week (checklist) 🧪
-- Platforms overview 🏛️
-- FAQ and Glossary 🙋
-- Community & contributions 🤝
+- 1. Overview
+- 2. Problems and protocols
+- 3. Architecture and flows
+- 4. Using the system
+- 5. Reference
 
 > Start here: protocols index → [core protocols](research/02-protocol-specifications/l1-core-protocols/) • platforms overview → [platforms readme](gtcx-ecosystem-platforms/readme.md) • e2e demo (PANX↔Cortex) → [cognitive readme](gtcx-ecosystem-cognitive/readme.md)
 
-## Executive summary ✨
+## 1. Overview
+
+### Executive summary ✨
 GTCX is sovereign verification infrastructure for global trade. Five core protocols — TradePass, GeoTag, GCI, VaultMark, and PvP — turn real‑world statements and documents into independently verifiable proofs that CRX, SGX, and AGX use to automate permits, listings, and settlement. The result is moving from weeks of paperwork and opaque intermediaries to same‑day approvals and sub‑second settlement.
 
 ### Core components at a glance
@@ -66,7 +59,7 @@ Outcomes (targets):
 - VaultMark: continuous digital chain of custody; instant ownership verification; sealed audit
 - PvP: atomic payment‑versus‑physical; settlement < 1s; scales to 10M+ daily transactions
 
-## Who this is for
+### Who this is for
 - Government and industry regulators: sovereignty‑preserving digital infrastructure for permit automation, consistent policy application, and auditable outcomes.
 - Financial institutions (trade finance, banks, PSPs): proof‑backed execution and atomic settlement with clear policy gates and audit trails.
 - Trade desks and exchanges (market makers, SGX/AGX operators, vaults): verifiable listings, custody integrity, and PvP settlement with zero mixing.
@@ -74,7 +67,7 @@ Outcomes (targets):
 - Producers, exporters, and cooperatives: trusted market access, fair pricing, and same‑day eligibility.
 - Integrators and open‑source builders: protocol‑first stack with reference services, schemas, and SDKs.
 
-## What is needed for trade (and why)
+### What is needed for trade (and why)
 Buyers, regulators, and exchanges ask the same questions. Each answer must be verifiable.
 
 - **Who am I buying from?** TradePass proves the identity of people and organizations and grants time‑boxed roles (e.g., exporter) so authorization is portable and auditable.
@@ -136,7 +129,9 @@ Platforms interoperate rather than strictly chain. CRX feeds sovereign approval/
 | Banks/PSPs & settlement rails | Reconciliation risk; chargebacks; manual compliance | PvP orchestration; proof references; policy gating | Both‑or‑neither finality; automated compliance |
 | Auditors & civil society | ESG unverifiable; after‑the‑fact investigations | Sealed artifacts (VaultMark), location proofs, policy history | Real‑time verification; credible oversight |
 
-## Day in the life (epic, but real) 📽️
+## 2. Problems and protocols
+
+### Day in the life (epic, but real) 📽️
 
 ### Producer (cooperative lead)
 <sub>
@@ -215,7 +210,7 @@ sequenceDiagram
   PVP-->>AGX: Both‑or‑neither execution (<1s)
 ```
 
-## Problems we solve
+### Problems we solve
 Trade today fails in predictable ways. The GTCX stack addresses each failure with a concrete, verifiable mechanism.
 
 - **Identity without portability**: Registries, paper IDs, and manual KYC do not travel across agencies or borders. Every jurisdiction restarts the process, creating weeks‑long queues and inconsistent permissions. TradePass issues cryptographically verifiable identities and time‑boxed roles so authorization is portable, least‑privilege, and auditable.
@@ -243,7 +238,7 @@ Trade today fails in predictable ways. The GTCX stack addresses each failure wit
 | Compliance without speed | Rules change; processes don’t |
 | Settlement without certainty | Intermediaries; failed trades |
 
-## Protocols (foundation)
+### Protocols (foundation)
 Core protocol specifications live in `gtcx-ecosystem-research/02-protocol-specifications/`.
 
 | Protocol | Purpose | Key elements |
@@ -274,7 +269,9 @@ Transport and data contracts use JSON Schema with versioned `$id`.
 
 <!-- Removed high-level A→B→C diagram to reduce redundancy -->
 
-### Platforms overview (who it’s for and why it matters)
+## 3. Architecture and flows
+
+### Three‑tier architecture (overview) 🏗️
 - **CRX — Regulatory Exchange**: for ministries and agencies to automate permits and apply policy consistently. Solves long queues, leakage, and inconsistent approvals with transparent workflows and SLAs. [CRX README](gtcx-ecosystem-platforms/README.md)
 - **SGX — Sovereign National Exchange**: for domestic buyers, traders, vaults, and banks to list and settle proof‑backed lots. Solves opaque provenance and counterparty risk. [SGX README](gtcx-ecosystem-platforms/README.md)
 - **AGX — Authenticated Global Exchange**: for international buyers and exporters to discover and trade across federated SGX markets. Solves fragmented discovery and cross‑border execution. [AGX README](gtcx-ecosystem-platforms/README.md)
@@ -311,7 +308,9 @@ flowchart LR
   PANX --> AGX
 ```
 
-## Use cases (flagship)
+## 4. Using the system
+
+### Use cases (flagship)
 - Permit issuance (regulator): GCI decides eligibility the same way every time; CRX issues with an audit trail; VaultMark references seal artifacts. Time drops from months to hours.
 - Depart/arrive verification (logistics): GeoTag evidence + VaultMark custody → PANX proof; Cortex raises real‑time alerts for anomalies.
 - Corridor policy enforcement (government): GCI applies explicit rules; TradePass gates roles; decisions are consistent and explainable.
@@ -337,7 +336,7 @@ Day 5 — Report and review
 Telegram TradeBox
 - Chat‑first onboarding (multi‑language, low bandwidth) for producers and clerks; see the TradeBox journey below.
 
-## Q&A
+### Q&A
 - Is PANX a protocol?
   - No. PANX is a verification service that consumes protocol artifacts to produce network proofs.
 - What’s sealed?
@@ -345,7 +344,7 @@ Telegram TradeBox
 - How do I run a pilot quickly?
   - Start with GeoTag + VaultMark at one site; add GCI/TradePass; then PANX; gate PvP last.
 
-## Glossary
+### Glossary
 - Protocol — shared rulebook and data contracts
 - Proof — evidence‑backed claim you can independently verify
 - Seal — tamper‑evident record preserved for audit
@@ -354,7 +353,9 @@ Telegram TradeBox
 - Custody — chain of ownership and control recorded by VaultMark
 - Threshold — role‑weighted rule in PANX required to reach proof “achieved”
 
-## Three‑tier architecture 🏗️
+## 5. Reference
+
+### Three‑tier architecture 🏗️
 1) Protocols — specifications and data contracts (research repo)
 2) Intelligence systems — PANX, Cortex, ANISA (this org)
 3) Platforms and apps — Exchanges and Field‑First Mobile Applications
