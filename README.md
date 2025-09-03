@@ -44,7 +44,7 @@ GTCX is sovereign verification infrastructure for global trade. Five core protoc
 
 ### By the numbers
 | Signal | Value |
-| --- | --- |
+| :-- | :-- |
 | Global commodity trade | ~$13T annually |
 | Value lost to frictions | ~30% (≈$3.9T) |
 | Identity verification | 3 weeks → ~30 seconds |
@@ -246,7 +246,7 @@ Trade today fails in predictable ways. The GTCX stack addresses each failure wit
 Core protocol specifications live in `gtcx-ecosystem-research/02-protocol-specifications/`.
 
 | Protocol | Purpose | Key elements |
-| --- | --- | --- |
+| :-- | :-- | :-- |
 | TradePass | Identity & authorization | DIDs/VCs; roles; entitlements |
 | GCI | Compliance & policy | credentials; attestations; scoring |
 | GeoTag | Evidence | cryptographic location; timestamping; device attestation |
