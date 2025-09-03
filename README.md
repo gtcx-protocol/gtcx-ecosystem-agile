@@ -22,7 +22,7 @@ Last updated: 2025‑09‑03 08:00Z
 - End‑to‑end data flow and visuals
 - Five flagship use cases
 - Pilot in one week (checklist)
-- Spec links
+- Platforms overview
 - FAQ and Glossary
 - Community & contributions
 
@@ -500,6 +500,39 @@ PvP (settlement)
   - Terraform modules for VM + DNS + secrets
 
 ## Roadmap (high‑level)
+### Roadmap at a glance (visual)
+```mermaid
+flowchart LR
+  subgraph NOW["Now — Foundational"]
+    A1["Protocol hardening & schema snapshots"]
+    A2["Compatibility CI (schemas + fixtures)"]
+    A3["Reference SDKs (TS/Py)"]
+  end
+
+  subgraph NEXT["Next — Interoperability & Operations"]
+    B1["TradePass federation"]
+    B2["PvP multi‑rail connectors"]
+    B3["GeoTag secure attestation"]
+    B4["VaultMark smart seals & twins"]
+    B5["Persistence & retention (partitioning/TTL)"]
+    B6["Observability (metrics, SLOs, tracing)"]
+  end
+
+  subgraph LATER["Later — Agentic & Pilots"]
+    C1["PANX re‑verify plans & dynamic thresholds"]
+    C2["Cortex anomaly watchers & proposals"]
+    C3["Pilots & corridor playbooks"]
+    C4["Telegram onboarding funnels"]
+  end
+
+  A1 --> A2 --> A3 --> B1
+  B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> C1 --> C2 --> C3 --> C4
+```
+
+#### Now → Next → Later (concise)
+- Now: protocol hardening; schema compatibility CI; reference SDKs.
+- Next: federation, multi‑rail settlement, secure attestation, smart seals, persistence/retention, observability.
+- Later: PANX/Cortex agentic behaviors; corridor pilots; onboarding funnels.
 - Protocol hardening & specification snapshots
   - TradePass, GCI, GeoTag, VaultMark, PvP: stabilize core semantics and data contracts
   - Snapshot cadence and change control (proposal → review → RFC → snapshot)
