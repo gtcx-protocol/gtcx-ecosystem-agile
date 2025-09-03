@@ -70,10 +70,12 @@ Outcomes (targets):
 - PvP: atomic payment‑versus‑physical; settlement < 1s; scales to 10M+ daily transactions
 
 ## Who this is for
-- Governments and regulators seeking sovereignty‑preserving digital infrastructure (e.g., permits in ≤ 6 hours; +40% revenue capture seen in models)
-- Verified producers and cooperatives needing market access with trust guarantees (direct access; better pricing)
-- Exchanges, vaults, and banks integrating proof‑based, atomic settlement
-- Integrators and open‑source builders adopting a protocol‑first stack
+- Government and industry regulators: sovereignty‑preserving digital infrastructure for permit automation, consistent policy application, and auditable outcomes.
+- Financial institutions (trade finance, banks, PSPs): proof‑backed execution and atomic settlement with clear policy gates and audit trails.
+- Trade desks and exchanges (market makers, SGX/AGX operators, vaults): verifiable listings, custody integrity, and PvP settlement with zero mixing.
+- Buyers and investors: transparent provenance, counterparty assurance, and faster time‑to‑settle.
+- Producers, exporters, and cooperatives: trusted market access, fair pricing, and same‑day eligibility.
+- Integrators and open‑source builders: protocol‑first stack with reference services, schemas, and SDKs.
 
 ## What is needed for trade (and why)
 Buyers, regulators, and exchanges ask the same questions. Each answer must be verifiable.
