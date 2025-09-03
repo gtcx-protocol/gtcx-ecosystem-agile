@@ -8,7 +8,7 @@ Public home for the GTCX verification protocols and sovereign platforms.
 
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg) ![Updated](https://img.shields.io/badge/Updated-2025--09--03-success) ![Protocols](https://img.shields.io/badge/Protocols-5-blue) ![Sovereignty](https://img.shields.io/badge/Design-Sovereignty--Preserving-brightgreen)
 
-Last updated: 2025‑09‑03 07:45Z
+Last updated: 2025‑09‑03 07:50Z
 
 ## Table of contents
 - Executive summary
@@ -28,6 +28,16 @@ Last updated: 2025‑09‑03 07:45Z
 
 ## Executive summary
 GTCX is sovereign verification infrastructure for global trade. Five core protocols — TradePass, GeoTag, GCI, VaultMark, and PvP — convert claims into machine‑verifiable proofs that CRX, SGX, and AGX use to automate permits, listings, and settlement. The result is moving from weeks of paperwork and opaque intermediaries to same‑day approvals and sub‑second settlement.
+
+### By the numbers
+| Signal | Value |
+| --- | --- |
+| Global commodity trade | ~$13T annually |
+| Value lost to frictions | ~30% (≈$3.9T) |
+| Identity verification | 3 weeks → ~30 seconds |
+| Compliance eligibility | 3 weeks → ~2 minutes |
+| Permit issuance (CRX) | typical ≤ 6 hours |
+| Settlement (PvP) | atomic < 1 second; 10M+ daily tx scale |
 
 Outcomes (targets from the technical advisors primer):
 - Identity: 3 weeks → ~30 seconds (TradePass)
