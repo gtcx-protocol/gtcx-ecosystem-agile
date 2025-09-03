@@ -455,21 +455,24 @@ Each service includes: README, user/agent guides, runbooks, deploy guides, JSON 
 <sub>[Back to top](#table-of-contents-)</sub>
 ```mermaid
 flowchart TD
-  CRX["CRX Registration & Onboarding"] --> TP["TradePass Identity"]
-  TP --> GT["GeoTag Site & Production Evidence"]
-  GT --> GCI["GCI Compliance Evaluation (Score)"]
-  GCI --> VM["VaultMark Custody (Sealed Lots)"]
-  VM --> SGX["SGX Export License / National Exchange"]
-  SGX --> AGX["AGX Authenticated Global Exchange"]
-  AGX --> PVP["PvP Cross‑Border Settlement"]
-  PVP --> VM2["VaultMark Sealed Audit Records"]
+  classDef small font-size:10px,stroke-width:1px;
+  classDef tiny font-size:9px,stroke-width:1px;
+
+  CRX["CRX Registration"]:::small --> TP["TradePass Identity"]:::small
+  TP --> GT["GeoTag Evidence"]:::small
+  GT --> GCI["GCI Evaluation"]:::small
+  GCI --> VM["VaultMark Custody"]:::small
+  VM --> SGX["SGX Export License"]:::small
+  SGX --> AGX["AGX Global Exchange"]:::small
+  AGX --> PVP["PvP Settlement"]:::small
+  PVP --> VM2["VaultMark Audit"]:::small
 
   %% Gates (dashed control links)
-  PANX["PANX Verification"]
-  CRXGATE["CRX Permit / Export Approval"]
-  PANX -.->|proof achieved / lot eligibility| VM
+  PANX["PANX Verification"]:::tiny
+  CRXGATE["CRX Permit"]:::tiny
+  PANX -.->|proof achieved| VM
   CRXGATE -.->|permit issued| SGX
-  PANX -.->|settlement proof ref| PVP
+  PANX -.->|settlement ref| PVP
 ```
 
 ### Verification gates (at a glance)
