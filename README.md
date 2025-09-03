@@ -17,7 +17,7 @@ Last updated: 2025‑09‑03 08:00Z
 - 4. Using the system
 - 5. Reference
 
-> Start here: protocols index → [core protocols](research/02-protocol-specifications/l1-core-protocols/) • platforms overview → [platforms readme](gtcx-ecosystem-platforms/readme.md) • e2e demo (PANX↔Cortex) → [cognitive readme](gtcx-ecosystem-cognitive/readme.md)
+> Start here: platforms overview → [platforms readme](gtcx-ecosystem-platforms/readme.md) • e2e demo (PANX↔Cortex) → [cognitive readme](gtcx-ecosystem-cognitive/readme.md)
 
 ## 1. Overview
 
@@ -239,7 +239,7 @@ Trade today fails in predictable ways. The GTCX stack addresses each failure wit
 | Settlement without certainty | Intermediaries; failed trades |
 
 ### Protocols (foundation)
-Core protocol specifications live in `gtcx-ecosystem-research/02-protocol-specifications/`.
+Core protocol specifications are snapshot inside this organization’s protocol repositories.
 
 | Protocol | Purpose | Key elements |
 | :-- | :-- | :-- |
@@ -485,7 +485,7 @@ Each service includes: README, user/agent guides, runbooks, deploy guides, JSON 
 - AGX — authenticated global exchange (international marketplace)
 - Terminal & UI shells — operator dashboards and community views (repos under `gtcx-ecosystem-platforms/`)
 - APIs & gateways — shared adapters and routing (`gtcx-ecosystem-api-gateway/`)
-- Research & specs — canonical protocol drafts and design notes (`gtcx-ecosystem-research/`)
+- Research & specs — canonical protocol drafts and design notes (this org)
 
 ### Access layer: CaaS, VIA, VXA
 - CaaS: simple APIs that wrap protocol workflows for apps and services
