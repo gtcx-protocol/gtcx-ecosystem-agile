@@ -52,7 +52,7 @@ GTCX is sovereign verification infrastructure for global trade. Five core protoc
 | Permit issuance (CRX) | typical ≤ 6 hours |
 | Settlement (PvP) | atomic < 1 second; 10M+ daily tx scale |
 
-Outcomes (targets from the technical advisors primer):
+Outcomes (targets):
 - Identity: 3 weeks → ~30 seconds (TradePass)
 - Origin proof: “impossible” → instant (GeoTag)
 - Compliance eligibility: 3 weeks → ~2 minutes (GCI)
@@ -60,7 +60,7 @@ Outcomes (targets from the technical advisors primer):
 - Custody: continuous, sealed audit across transfers (VaultMark)
 - Settlement: atomic PvP < 1 second; scales to 10M+ daily transactions
 
-### System at a glance (from technical advisors primer)
+### System at a glance
 - TradePass: identity verification 3 weeks → ~30 seconds; capacity ~1M entities/day
 - GeoTag: origin proof from “impossible” → instant (cryptographic GPS signatures + device attestation)
 - GCI: compliance evaluation 3 weeks → ~2 minutes (policy engine + attestations)
@@ -225,7 +225,7 @@ Trade today fails in predictable ways. The GTCX stack addresses each failure wit
 
 - **Settlement without finality**: Payment and delivery occur on separate rails, leaving counterparties exposed and disputes to escalate. PvP settles “both‑or‑neither” atomically, using VaultMark custody references and PANX proof links so execution is instant, correct, and independently auditable.
 
-### Market reality (from primer)
+### Market reality
 | Metric | Current State | Impact |
 | ---| ---| --- |
 | Annual commodity trade | ~$13T | Massive addressable scope |
@@ -257,7 +257,7 @@ Transport and data contracts use JSON Schema with versioned `$id`.
 - VaultMark (Audit): physical‑digital binding (NFC/RFID), digital twins, immutable custody; prevents verification washing
 - PvP (Settlement): atomic payment‑versus‑physical; settlement only when proof+policy pass
 
-#### Protocol outcomes (from primer)
+#### Protocol outcomes
 | Layer | Before | After |
 | --- | --- | --- |
 | TradePass | 3 weeks manual checks | ~30 seconds verification |
@@ -536,7 +536,7 @@ sequenceDiagram
   PVP->>PVP: Atomic settlement
 ```
 
-### “Trade in ~6 hours” (from primer)
+### “Trade in ~6 hours”
 <sub>[Back to top](#table-of-contents-)</sub>
 - Identity verified (TradePass): ~30 seconds
 - Site/production evidence (GeoTag): instant
