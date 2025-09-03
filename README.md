@@ -18,11 +18,13 @@ Last updated: 2025‑09‑03 08:00Z
 - Day in the life 📽️
 - Problems we solve
 - Protocols (foundation) — deep dives
+- Use cases (flagship)
+- Pilot plan (one week)
+- Q&A
+- Glossary
 - Three‑tier architecture
 - Open‑source platforms & tooling
 - End‑to‑end data flow and visuals
-- Five flagship use cases
-- Pilot in one week (checklist)
 - Platforms overview
 - FAQ and Glossary
 - Community & contributions
@@ -310,31 +312,48 @@ flowchart LR
   PANX --> AGX
 ```
 
-## Five flagship use cases
-- Permit issuance: GCI + TradePass + VaultMark; hours instead of weeks
-- Depart/arrive verification: GeoTag + VaultMark → PANX proof; real‑time alerts
-- Corridor policy enforcement: GCI + TradePass; transparent, consistent governance
-- Milestone‑based payment: PANX proof → PvP + VaultMark; risk‑free release
-- Dispute packet: VaultMark + GeoTag + GCI; complete sealed evidence
+## Use cases (flagship)
+- Permit issuance (regulator): GCI decides eligibility the same way every time; CRX issues with an audit trail; VaultMark references seal artifacts. Time drops from months to hours.
+- Depart/arrive verification (logistics): GeoTag evidence + VaultMark custody → PANX proof; Cortex raises real‑time alerts for anomalies.
+- Corridor policy enforcement (government): GCI applies explicit rules; TradePass gates roles; decisions are consistent and explainable.
+- Milestone‑based payment (banks): PANX proof drives PvP release; VaultMark custody prevents mixing; settlement is atomic.
+- Dispute packet (operators): VaultMark + GeoTag + GCI produce a complete, sealed bundle others can independently verify.
 
-## Pilot in one week (checklist)
-1) Site onboarding: issue TradePass, bind GeoTag devices, enable VaultMark
-2) Capture: record depart/arrive events with signed evidence
-3) Verify: PANX proof thresholds per event type
-4) Govern: GCI policy gates; simulate corridor rules
-5) Settle: dry‑run PvP release conditions
-6) Report: sealed audit bundle + metrics
+## Pilot plan (one week)
+Day 1 — Site onboarding
+- Issue TradePass; pair GeoTag; enable VaultMark seals; create first lot.
 
-## FAQ
-- Is PANX a protocol? No. PANX is a verification service that consumes protocol artifacts to produce network proofs.
-- What’s sealed? Proofs, custody events, and artifacts via VaultMark.
-- How do I pilot? Start with GeoTag + VaultMark at one site; add GCI/TradePass; then PANX; gate PvP last.
+Day 2 — Capture and verify
+- Record depart/arrive with signed evidence; PANX thresholds per event type.
+
+Day 3 — Govern and simulate
+- GCI policy gates; simulate corridor rules; tune thresholds with dissent capture.
+
+Day 4 — Dry‑run settlement
+- PvP release conditions on proof references; bank/rail integration dry‑run.
+
+Day 5 — Report and review
+- Sealed audit bundle; metrics in Cortex; operator retro.
+
+Telegram TradeBox
+- Chat‑first onboarding (multi‑language, low bandwidth) for producers and clerks; see the TradeBox journey below.
+
+## Q&A
+- Is PANX a protocol?
+  - No. PANX is a verification service that consumes protocol artifacts to produce network proofs.
+- What’s sealed?
+  - Proofs, custody events, and artifacts via VaultMark.
+- How do I run a pilot quickly?
+  - Start with GeoTag + VaultMark at one site; add GCI/TradePass; then PANX; gate PvP last.
 
 ## Glossary
 - Protocol — shared rulebook and data contracts
 - Proof — evidence‑backed claim you can independently verify
 - Seal — tamper‑evident record preserved for audit
 - Atomic settlement — payment/delivery only complete together
+- Eligibility — outcome of GCI policy evaluation
+- Custody — chain of ownership and control recorded by VaultMark
+- Threshold — role‑weighted rule in PANX required to reach proof “achieved”
 
 ## Three‑tier architecture 🏗️
 1) Protocols — specifications and data contracts (research repo)
