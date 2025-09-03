@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="gtcx-ecosystem-design/media/gtcx-header.jpg" alt="GTCX — Infrastructure for Global Trade" width="100%">
+</p>
+
 # GTCX Protocol Ecosystem
 
 Public home for the GTCX verification protocols and sovereign platforms.
@@ -54,12 +58,7 @@ Transport and data contracts use JSON Schema with versioned `$id`.
 - VaultMark (Audit): physical‑digital binding (NFC/RFID), digital twins, immutable custody; prevents verification washing
 - PvP (Settlement): atomic payment‑versus‑physical; settlement only when proof+policy pass
 
-```mermaid
-flowchart TD
-  A[Protocols] --> B[Reference Services]
-  B --> C[Open Platforms]
-  C --> D[Applications & Communities]
-```
+<!-- Removed high-level A→B→C diagram to reduce redundancy -->
 
 ### Spec links
 - CRX/SGX Exchange Integration: `research/02-protocol-specifications/l3-exchange-layer/crx-sgx-exchange-integration.md`
@@ -68,22 +67,22 @@ flowchart TD
 ### Verification layers → platforms (visual)
 ```mermaid
 flowchart LR
-  subgraph VP[Verification Protocols]
-    TP[TradePass]
-    GCI[GCI]
-    GT[GeoTag]
-    VM[VaultMark]
-    PVP[PvP]
+  subgraph VP["Verification Protocols"]
+    TP["TradePass"]
+    GCI["GCI"]
+    GT["GeoTag"]
+    VM["VaultMark"]
+    PVP["PvP"]
   end
-  subgraph RS[Reference Services]
-    PANX[PANX (Verification)]
-    ANISA[ANISA (Cultural)]
-    CORTEX[Cortex (Analytics)]
+  subgraph RS["Reference Services"]
+    PANX["PANX Verification"]
+    ANISA["ANISA Cultural"]
+    CORTEX["Cortex Analytics"]
   end
-  subgraph PL[Platforms]
-    CRX[CRX Regulatory]
-    SGX[SGX Exchange]
-    AGX[AGX Global]
+  subgraph PL["Platforms"]
+    CRX["CRX Regulatory"]
+    SGX["SGX Exchange"]
+    AGX["AGX Global"]
   end
   TP --> PANX
   GCI --> PANX
@@ -128,33 +127,97 @@ flowchart LR
 2) Reference services — PANX, Cortex, ANISA (this org)
 3) Platforms & apps — open‑source frontends, terminals, and integrations
 
+#### Protocols layer
 ```mermaid
 flowchart LR
-  subgraph Protocols
-    L1[TradePass]
-    L2[GCI]
-    L3[GeoTag]
-    L4[VaultMark]
-    L5[PvP]
-  end
-  subgraph Reference Services
-    S1[PANX\nVerification]
-    S2[ANISA\nCultural Intelligence]
-    S3[Cortex\nAnalytics]
-  end
-  subgraph Platforms
-    CRX[CRX Regulatory]
-    SGX[SGX Sovereign Exchange]
-    AGX[AGX Global Exchange]
-  end
-  L1 --> S1
-  L2 --> S1
-  L3 --> S1
-  L4 --> S1
-  L5 --> S1
-  S2 -. enrich .-> S1
-  S1 --> S3
+  TP["TradePass"] --> GT["GeoTag"]
+  GT --> VM["VaultMark"]
+  VM --> PVP["PvP"]
+  GCI["GCI"] --> TP
+  GCI --> PVP
 ```
+Protocols are composable, not strictly linear. TradePass authorizes capture, GeoTag produces signed evidence, VaultMark seals artifacts, and PvP gates settlement. GCI applies policies into both authorization and settlement.
+
+#### Reference services layer
+```mermaid
+flowchart LR
+  ANISA["ANISA Cultural"] <--> PANX["PANX Verification"]
+  PANX -->|verified events / metrics| CORTEX["Cortex Analytics"]
+  CORTEX -.->|anomaly alerts / re‑verify triggers| PANX
+  CORTEX -.->|insights / topics| ANISA
+```
+Reference services enrich, verify, and analyze protocol artifacts. ANISA adds cultural context; PANX turns evidence + policy into network proofs; Cortex aggregates and visualizes signals for operators.
+
+##### What actually happens (inputs → processing → outputs)
+- ANISA (enrichment)
+  - Inputs: site/production notes, local terms, stakeholder roles (TradePass), region hints (GeoTag)
+  - Processing: cultural cues, etiquette, conflict‑avoidant phrasing, authenticity risk signals
+  - Outputs: `{ authenticity_hint, tone_guidance, risk_notes[] }`
+- PANX (verification)
+  - Inputs: VaultMark lot metadata, GeoTag evidence, TradePass roles, GCI eligibility/policy
+  - Processing: role‑weighted thresholds per event type, dissent capture, reasoned hints
+  - Outputs: `{ proof_id, achieved: true|false, percentage, hints[], dissent[], contract_version }`
+- Cortex (analytics)
+  - Inputs: PANX proofs/events, custody/market telemetry, operator annotations
+  - Processing: streaming aggregations, anomaly detection, trend/impact analyses
+  - Outputs: `{ anomaly_alerts[], reverify_triggers[], dashboards, policy_insights[] }`
+
+##### Representative messages
+```json
+// PANX verification proof (response)
+{
+  "proof_id": "pxf_01HZYZ...",
+  "event_type": "lot_eligibility",
+  "achieved": true,
+  "percentage": 0.82,
+  "hints": ["geo_tag_ok", "gci_pass", "roles_weight_met"],
+  "dissent": [],
+  "ts": 1756890000,
+  "contract_version": "v1.0"
+}
+```
+
+```json
+// Cortex anomaly alert (to operators)
+{
+  "alert_id": "alrt_9b2...",
+  "lot_id": "vm_lot_gh_2025_001",
+  "signal": "pattern_deviation",
+  "reason": "unusual transit dwell time",
+  "recommendation": "trigger_reverify",
+  "trigger": { "type": "panx_reverify", "payload": { "event_type": "custody_check" } }
+}
+```
+
+```json
+// ANISA enrichment (to PANX/CRX)
+{
+  "authenticity_hint": 0.74,
+  "tone_guidance": "de‑escalating, collaborative",
+  "risk_notes": ["local_holiday_window", "prefer_morning_contact"]
+}
+```
+
+##### SLOs (typical targets)
+- ANISA enrichment: p95 < 150ms
+- PANX verification (single event): p95 < 500ms; batch proofs: p95 < 2s
+- Cortex alerting/trigger propagation: p95 < 1s end‑to‑end
+
+#### Platforms layer
+```mermaid
+flowchart LR
+  CRX["CRX Regulatory"]
+  SGX["SGX Sovereign Exchange"]
+  AGX["AGX Global Exchange"]
+
+  CRX --> SGX
+  SGX --> CRX
+  SGX --> AGX
+  AGX --> SGX
+  CRX -.-> AGX
+  AGX -.-> CRX
+```
+Platforms interoperate rather than strictly chain. CRX feeds sovereign approval/compliance into SGX; SGX returns market and custody events back to CRX. AGX connects multiple SGX instances to international buyers; limited CRX↔AGX links exist for export controls and revenue reporting.
 
 ## Reference services (live repos)
 - PANX (Oracle/Verification): `gtcx-ecosystem-cognitive/panx` — consensus, proofs, forward to Cortex
@@ -171,61 +234,126 @@ Each service includes: README, user/agent guides, runbooks, deploy guides, JSON 
 - APIs & gateways — shared adapters and routing (`gtcx-ecosystem-api-gateway/`)
 - Research & specs — canonical protocol drafts and design notes (`gtcx-ecosystem-research/`)
 
-### End‑to‑end data flow
+### End‑to‑end trade process (custody before SGX)
 ```mermaid
 flowchart TD
-  A[Physical Production]
-  B[VIA/VXA + GeoTag + TradePass]
-  C[Compliance‑Verified Producers]
-  D[CRX Government Processing]
-  E[SGX National Exchange]
-  F[AGX International Marketplace]
-  G[Cross‑Border PvP Settlement]
-  A --> B --> C --> D --> E --> F --> G
+  CRX["CRX Registration & Onboarding"] --> TP["TradePass Identity"]
+  TP --> GT["GeoTag Site & Production Evidence"]
+  GT --> GCI["GCI Compliance Evaluation (Score)"]
+  GCI --> VM["VaultMark Custody (Sealed Lots)"]
+  VM --> SGX["SGX Export License / National Exchange"]
+  SGX --> AGX["AGX Authenticated Global Exchange"]
+  AGX --> PVP["PvP Cross‑Border Settlement"]
+  PVP --> VM2["VaultMark Sealed Audit Records"]
+
+  %% Gates (dashed control links)
+  PANX["PANX Verification"]
+  CRXGATE["CRX Permit / Export Approval"]
+  PANX -.->|proof achieved / lot eligibility| VM
+  CRXGATE -.->|permit issued| SGX
+  PANX -.->|settlement proof ref| PVP
 ```
 
-### End‑to‑end sequence (corrected order)
+### Verification gates (at a glance)
+```mermaid
+flowchart LR
+  TP["TradePass"] --> GT["GeoTag"] --> GCI["GCI Eligibility"] --> VM["VaultMark Custody"] --> PVP["PvP"]
+  PANX["PANX Verification"] -.->|lot eligibility| VM
+  CRX["CRX Permit"] -.->|export approval| VM
+  PANX -.->|proof reference| PVP
+```
+
+### End‑to‑end sequence (eligibility first, then trade)
 ```mermaid
 sequenceDiagram
+  participant CRX as CRX (register)
   participant TP as TradePass
   participant GT as GeoTag
-  participant VM as VaultMark
-  participant PANX as PANX (verify)
-  participant GCI as GCI (policy)
+  participant GCI as GCI (eligibility)
+  participant VM as VaultMark (at trade)
   participant PVP as PvP (settle)
 
-  TP->>GT: Authorize capture & bind identity (roles/scopes)
-  GT->>VM: Seal signed location/time evidence
-  PANX->>PANX: Verify evidence (role‑weighted thresholds)
-  PANX->>GCI: Evaluate policy gates (jurisdiction/corridor)
-  GCI-->>PANX: Policy OK
-  PANX-->>PVP: Proof achieved (with hints)
-  PVP->>PVP: Atomic settlement if proof+policy pass
-  PVP-->>VM: Seal settlement receipts
+  CRX->>TP: Onboard & issue TradePass
+  TP->>GT: Authorize capture & bind identity
+  GT->>GCI: Provide signed site/production evidence
+  GCI-->>TP: Trade eligibility (greenlight)
+
+  Note over VM,PVP: When there is product to trade
+  TP->>VM: Create custody/lot & seal artifacts
+  VM-->>PVP: Custody proof
+  GCI-->>PVP: Policy OK
+  PVP->>PVP: Atomic settlement
 ```
 
 ## Contracts and versioning
-- JSON Schema with `$id` across services
-- Response header `X-Contract-Version`
-- Compatibility checks included in repos (`contracts_compat_check.py`)
+- Schemas: JSON Schema with stable `$id` and semantic versioning
+  - Shared interfaces: `gtcx-ecosystem-cognitive/shared/interfaces/`
+  - PANX request/response: `panx_verification_event.schema.json`, `panx_verify_response.schema.json`
+  - Cortex ingest: `cortex_ingest_event.schema.json`
+- Runtime signaling
+  - Response header: `X-Contract-Version: vMAJOR.MINOR`
+  - Backward‑compatible additive changes bump MINOR; breaking changes bump MAJOR with deprecation window
+- Tooling & checks
+  - Compatibility script: `gtcx-ecosystem-cognitive/shared/interfaces/contracts_compat_check.py`
+  - CI suggestion: validate schemas + sample instances on PRs (can be run locally now)
+  - Environment override for schema paths in containers: see `panx/service/app/validation.py`
 
 ## Deploy
-- Quickstart (VM + Docker Compose) in PANX/Cortex/ANISA READMEs
-- Helm charts & GKE Autopilot (planned)
+- Local Docker Compose (PANX + Cortex + DB)
+  - Compose: `gtcx-ecosystem-cognitive/docker-compose.yml`
+  - PANX service: `gtcx-ecosystem-cognitive/panx/service/README.md`
+- GCP VM (TLS via Caddy)
+  - Overlay & guide: `gtcx-ecosystem-cognitive/infra/compose-prod/README.md`
+  - Env template: `gtcx-ecosystem-cognitive/infra/compose-prod/ENV.example`
+- ANISA API
+  - Deploy guide: `gtcx-ecosystem-anisa/agile-pm/deploy_gcp_vm.md`
+- Planned
+  - Helm charts & GKE Autopilot manifests
+  - Terraform modules for VM + DNS + secrets
 
 ## Roadmap (high‑level)
-- Protocol hardening and specification snapshots
-- Schema‑first development with version guarantees
-- Managed Postgres/Timescale persistence and retention
-- Observability: metrics, dashboards, and alerting
-- Agentic behaviors: PANX (borderline re‑verify plans), Cortex (watchers & action proposals)
+- Protocol hardening & specification snapshots
+  - TradePass, GCI, GeoTag, VaultMark, PvP: stabilize core semantics and data contracts
+  - Snapshot cadence and change control (proposal → review → RFC → snapshot)
+  - Conformance test suite and fixtures per protocol (positive/negative cases)
+- Schema‑first development
+  - Semantic versioning rules, deprecation windows, and upgrade playbooks
+  - Reference client SDKs for TypeScript/Python (schema‑bound types, validators)
+  - CI gates for schema compatibility and sample instance coverage
+- Interoperability & federation (from protocols repo roadmap)
+  - TradePass federation and identity linking across jurisdictions
+  - PvP multi‑rail connectors (banking, mobile money, crypto) with atomicity proofs
+  - GeoTag secure attestation (device certs, HSM rotation, field audit trail)
+  - VaultMark smart seal program and digital twin APIs
+- Persistence & retention
+  - Managed Postgres/Timescale for proofs/events, partitioning and TTL policies
+  - Audit archive export (cold storage bundles signed by VaultMark)
+- Observability
+  - Service metrics and SLOs; dashboards for operators and regulators
+  - Distributed tracing with selective sampling; alert runbooks
+- Agentic behaviors (progressive)
+  - PANX: borderline re‑verify plans; dynamic thresholds informed by risk/quality
+  - Cortex: anomaly watchers, action proposals, operator copilot integrations
+- Pilots & reference implementations
+  - Corridor deployments with partners; playbooks for CRX/SGX/AGX rollout
+  - Telegram onboarding funnels linked to TradePass/GeoTag quickstarts
+
+See also: Protocols roadmap in `gtcx-ecosystem-protocols/README.md` (Future Roadmap section).
 
 ## Community
-- Issues and discussions in each repo
-- Contributions welcome: docs, code, research
+- Issues and discussions in each repo (use repo issue trackers)
+- Contributions welcome: docs, specs, code, diagrams
+- Security: report privately to maintainers before public disclosure
 
 MIT License
 
 ---
 
-Contributions & governance: open issues/PRs against component repos; follow CHANGELOGs in each for release notes.
+Contributions & governance: open issues/PRs against component repos; follow per‑component CHANGELOGs for releases (`gtcx-ecosystem-cognitive/CHANGELOG.md`, `gtcx-ecosystem-anisa/CHANGELOG.md`, `gtcx-ecosystem-cognitive/panx/changelog.md`, `gtcx-ecosystem-cognitive/cortex/changelog.md`).
+
+## Telegram onboarding (fast path)
+- Telegram bot utilities and onboarding flows:
+  - `gtcx-ecosystem-shared/utilities/gtcx-utility-telegrambot/README.md`
+  - `gtcx-ecosystem-shared/utilities/gtcx-utility-tradedesk/README.md`
+  - Master onboarding playbook: `gtcx-ecosystem-shared/utilities/gtcx-utility-tradedesk/agentic/gtcx-master-onboarding.md`
+- Typical flow: chat‑based TradePass issuance → GeoTag device pairing → basic compliance prompts → CRX pre‑registration → links into SGX/AGX portals when eligible.
