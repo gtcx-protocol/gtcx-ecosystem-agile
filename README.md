@@ -11,11 +11,26 @@ Public home for the GTCX verification protocols and sovereign platforms.
 Last updated: 2025‑09‑03 08:00Z
 
 ## Table of contents 🧭
-1. Overview
-2. Problems and protocols
-3. Architecture and flows
-4. Using the system
-5. Reference
+1. Executive summary ✨
+2. What is needed for trade (and why) ✅
+3. Outcomes at a glance
+4. Core components at a glance
+5. Actors and the problems we solve
+6. Day in the life 📽️
+7. Problems we solve 🧩
+8. Protocols (foundation) 📜
+9. Three‑tier architecture (overview) 🏗️
+10. Verification layers → platforms (visual)
+11. End‑to‑end trade process 🔄
+12. Verification gates (at a glance) 🚧
+13. End‑to‑end sequence (eligibility first, then trade) ⛓️
+14. Use cases (flagship)
+15. Pilot in one week (checklist) 🧪
+16. Platforms overview 🏛️
+17. Roadmap (high‑level) 🗺️
+18. Telegram onboarding (fast path) 📲
+19. Glossary 📖
+20. Reference
 
 
 
@@ -28,6 +43,8 @@ GTCX is sovereign verification infrastructure for global trade. Five core protoc
 - What it is: verification infrastructure that makes legitimacy provable and portable across agencies, borders, and markets.
 - Who it serves: regulators (consistent permits and oversight), producers/exporters (market access with proof), buyers/finance (counterparty assurance and atomic settlement).
 - How it works: protocols generate proofs; PANX verifies; Cortex analyzes; CRX/SGX/AGX use proof to automate permits, listings, and settlement.
+
+ 
 
 
 
@@ -146,17 +163,7 @@ Platforms interoperate rather than strictly chain. CRX feeds sovereign approval/
 ### Day in the life (epic, but real) 📽️
 
 ### Producer (cooperative lead)
-<sub>
-<ol>
-<li>Register cooperative in TradePass (~30s).</li>
-<li>Pair GeoTag device and capture site/batch evidence.</li>
-<li>GCI evaluates eligibility (~2 min).</li>
-<li>CRX issues permit (≤ 6h, same‑day).</li>
-<li>Create lot and seal custody in VaultMark.</li>
-<li>List eligible lot on SGX.</li>
-<li>Execute atomic settlement via PvP (< 1s).</li>
-</ol>
-</sub>
+Steps: Register in TradePass (~30s) → Pair GeoTag and capture evidence → GCI eligibility (~2 min) → CRX permit (≤ 6h) → Create VaultMark lot → List on SGX → PvP settlement (≤ 1s).
 ```mermaid
 sequenceDiagram
   participant VIA as "VIA App (Producer)"
@@ -180,7 +187,7 @@ sequenceDiagram
   VIA->>VM: Create lot and seal custody
   VM->>SGX: List eligible lot
   SGX-->>PVP: Execute trade with atomic settlement
-  Note over PVP: < 1s
+  Note over PVP: ≤ 1s
 ```
 
 <sub>
@@ -196,16 +203,7 @@ sequenceDiagram
 - Typical path: eligibility received ~2 min; permit turnaround same‑day (≤ 6h)
 
 ### Buyer (international)
-<sub>
-<ol>
-<li>Discover listings on SGX (federated to AGX).</li>
-<li>Request PANX proof for the lot.</li>
-<li>Review proof details (achieved/percentage/hints).</li>
-<li>Lock funds and initiate PvP.</li>
-<li>Verify custody reference via VaultMark.</li>
-<li>Execute both‑or‑neither settlement.</li>
-</ol>
-</sub>
+Steps: Discover on SGX/AGX → Request PANX proof → Review details → Lock funds (PvP) → Verify custody (VaultMark) → Both‑or‑neither execute.
 ```mermaid
 sequenceDiagram
   participant AGX as "AGX (Global)"
