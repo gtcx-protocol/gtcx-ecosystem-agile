@@ -9,9 +9,13 @@ GTCX is an open protocol stack for trustworthy global trade. It focuses on verif
 
 ## Protocols (foundation)
 Core protocol specifications live in `gtcx-ecosystem-research/02-protocol-specifications/`.
-- PANX Oracle Consensus — role‑weighted consensus, event‑type thresholds, auditable proofs
-- Governance/Compliance/Identity — building blocks for compliant trade flows
-- Transport and data contracts — JSON Schema with versioned `$id`
+- TradePass — identity & authorization (DIDs/VCs, roles, entitlements)
+- GCI — compliance & policy (credentials, attestations, scoring)
+- GeoTag — evidence (cryptographic location, timestamping, device attestation)
+- VaultMark — audit (sealed receipts, custody chain)
+- PvP — settlement (post‑verification, atomic payment‑versus‑physical)
+
+Transport and data contracts use JSON Schema with versioned `$id`.
 
 ```mermaid
 flowchart TD
@@ -28,8 +32,11 @@ flowchart TD
 ```mermaid
 flowchart LR
   subgraph Protocols
-    P1[PANX Consensus]
-    P2[Compliance/Identity]
+    L1[TradePass]
+    L2[GCI]
+    L3[GeoTag]
+    L4[VaultMark]
+    L5[PvP]
   end
   subgraph Reference Services
     S1[PANX\nVerification]
@@ -37,16 +44,17 @@ flowchart LR
     S3[Cortex\nAnalytics]
   end
   subgraph Platforms
-    UI1[Terminal]
-    UI2[Mobile/Web]
+    CRX[CRX Regulatory]
+    SGX[SGX Sovereign Exchange]
+    AGX[AGX Global Exchange]
   end
-  P1 --> S1
-  P2 --> S1
-  S1 --> S3
+  L1 --> S1
+  L2 --> S1
+  L3 --> S1
+  L4 --> S1
+  L5 --> S1
   S2 -. enrich .-> S1
-  S3 --> UI1
-  S1 --> UI1
-  UI1 --> Communities
+  S1 --> S3
 ```
 
 ## Reference services (live repos)
@@ -57,9 +65,25 @@ flowchart LR
 Each service includes: README, user/agent guides, runbooks, deploy guides, JSON Schemas, and changelogs.
 
 ## Open‑source platforms & tooling
+- CRX — government workflow automation & regulatory processing
+- SGX — sovereign national exchange & settlement
+- AGX — authenticated global exchange (international marketplace)
 - Terminal & UI shells — operator dashboards and community views (repos under `gtcx-ecosystem-platforms/`)
 - APIs & gateways — shared adapters and routing (`gtcx-ecosystem-api-gateway/`)
 - Research & specs — canonical protocol drafts and design notes (`gtcx-ecosystem-research/`)
+
+### End‑to‑end data flow
+```mermaid
+flowchart TD
+  A[Physical Production]
+  B[VIA/VXA + GeoTag + TradePass]
+  C[Compliance‑Verified Producers]
+  D[CRX Government Processing]
+  E[SGX National Exchange]
+  F[AGX International Marketplace]
+  G[Cross‑Border PvP Settlement]
+  A --> B --> C --> D --> E --> F --> G
+```
 
 ## Contracts and versioning
 - JSON Schema with `$id` across services
