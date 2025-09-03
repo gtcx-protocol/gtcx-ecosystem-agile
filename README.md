@@ -86,18 +86,18 @@ sequenceDiagram
   participant PVP as PvP
 
   VIA->>TP: Register cooperative (face + ID)
-  Note right of TP: ~30s
-  VIA->>GT: Pair device; capture site & batch evidence
-  Note right of GT: instant proofs
+  Note over TP: ~30s
+  VIA->>GT: Pair device and capture site and batch evidence
+  Note over GT: instant proofs
   GT->>GCI: Submit evidence for eligibility
-  Note right of GCI: ~2 min
+  Note over GCI: ~2 min
   GCI-->>CRX: Eligibility attestation
   CRX->>VIA: Permit issued
-  Note right of CRX: ≤ 6h (same‑day)
+  Note over CRX: ≤ 6h (same‑day)
   VIA->>VM: Create lot; seal custody
   VM->>SGX: List eligible lot
   SGX-->>PVP: Execute trade with atomic settlement
-  Note right of PVP: < 1s
+  Note over PVP: < 1s
 ```
 
 ### Regulator (CRX operator)
