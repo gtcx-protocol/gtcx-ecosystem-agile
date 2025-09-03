@@ -383,7 +383,7 @@ Intelligence systems enrich, verify, and analyze protocol artifacts. ANISA adds 
 
 ##### Product narratives (who it’s for, what it solves, how it feels)
 - **ANISA — Cultural Intelligence (field‑first)**
-  A cooperative lead opens the VIA app to register a new site. Before any photo or coordinate is taken, ANISA whispers the local terms that build trust, the questions to ask, and the proof to capture (“include the co‑op board stamp; take a wide shot of the entrance; avoid market‑day crowding at noon”). During capture it flags risks (“vendor IDs don’t match roster”) and suggests phrasing that de‑escalates (“ask for the lot book, not the receipt”). The guidance is saved alongside the artifacts so when TradePass and GeoTag submit to CRX, the evidence reads correctly the first time—less back‑and‑forth, fewer rejections.
+  A cooperative lead opens the VIA app to register a new site. Before capture, ANISA supplies concise prompts: key terms to use, questions to confirm, and the exact proof to collect (e.g., co‑op board stamp, entrance wide shot). During capture it flags risks (e.g., vendor IDs don’t match roster) and proposes clear phrasing. Guidance is saved with the artifacts so when TradePass and GeoTag submit to CRX, the evidence is complete on first pass—less rework, fewer rejections.
   In short: ANISA improves the human layer so the technical layer (TradePass, GeoTag, VaultMark) lands cleanly.
 
 - **PANX — Verification (not a protocol)**
